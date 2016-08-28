@@ -1,9 +1,9 @@
 # Zsh settings
   export EDITOR='nvim'
-  alias tmux="tmux -2"
-  alias vim="nvim"
-  alias home='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
-  eval "$(thefuck --alias)"
+  alias tmux='tmux -2'
+  alias vim='nvim'
+  alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
+  eval '$(thefuck --alias)'
 
 # reload zsh config
 alias reload='source ~/.zshrc'
