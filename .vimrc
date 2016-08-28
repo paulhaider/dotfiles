@@ -42,9 +42,9 @@ endif
 
 " change working directory to current file
 " set autochdir
-autocmd BufEnter * silent! lcd %:p:h
+autocmd BufEnter * silent! lcd %:p:h " works probably better with some plugins
 
-set clipboard+=unnamedplus
+set clipboard+=unnamedplus " access system clipboard
 set mouse=a
 " set timeoutlen=1000 ttimeoutlen=0
 set tabstop=2 " number of visual spaces per TAB
