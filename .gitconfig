@@ -1,3 +1,5 @@
 [user]
 	email = paolo.haider@gmail.com
 	name = Paul Haider
+[core]
+	excludesfile = /home/paul/.gitignore_global
