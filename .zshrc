@@ -19,9 +19,9 @@ KEYTIMEOUT=1
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Base16 Shell
-# if [ -z "$THEME" ]; then
+if [ -z "$THEME" ]; then
     export THEME="base16-monokai"
-# fi
+fi
 
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
