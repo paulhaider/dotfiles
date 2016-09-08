@@ -41,8 +41,8 @@ if has('gui_running')
 endif
 
 " change working directory to current file
-" set autochdir
-autocmd BufEnter * silent! lcd %:p:h " works probably better with some plugins
+set autochdir
+" autocmd BufEnter * silent! lcd %:p:h " works probably better with some plugins
 
 set clipboard+=unnamedplus " access system clipboard
 set mouse=a
