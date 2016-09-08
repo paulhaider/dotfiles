@@ -32,6 +32,7 @@ values."
      ;; games
      ;; markdown
      org
+     python
      ;; spotify
      ;; (shell :variables
      ;;        shell-default-height 30
