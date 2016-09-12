@@ -76,10 +76,19 @@ let g:powerline_pycmd = "py3"
 let g:airline_powerline_fonts = 0 "use powerline fonts
 let g:airline_theme='base16'
 " let g:airline_theme='badwolf'
+let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:tmuxline_preset = 'powerline'
 set noshowmode
+
+" no powerline seperators for tmuxline
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '>',
+    \ 'right' : '',
+    \ 'right_alt' : '<',
+    \ 'space' : ' '}
 
 " let g:airline_left_sep = ''
 " let g:airline_right_sep = ''
