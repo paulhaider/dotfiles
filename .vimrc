@@ -29,9 +29,9 @@ filetype indent on " load filetype-specific indent files
 
 " colorscheme configuration
 set t_Co=256
-" set background=dark
 let base16colorspace=256
-" colorscheme base16-default" colorscheme
+" set background=dark
+" colorscheme base16-default " colorscheme
 " colorscheme badwolf
 execute "set background=".$BACKGROUND
 execute "colorscheme ".$THEME
