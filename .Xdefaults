@@ -1,0 +1,24 @@
+URxvt.saveLines: 1000
+URxvt.scrollBar: false
+URxvt.foreground: white
+URxvt.background: black
+URxvt.secondaryScroll: true
+URxvt.depth: 32
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=10
+URxvt.boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=10
+!URxvt.font: xft:Inconsolata for Powerline:size=12
+!URxvt.boldFont: xft:Inconsolata:bold:size=12
+!URxvt.font: xft:Terminus:style=Regular:size=12
+!URxvt.boldFont: xft:Terminus:style=Bold:size=12
+!URxvt.font: xft:Anonymous Pro:style=Regular:size=11
+!URxvt.boldFont: xft:Anonymous Pro:style=Bold:size=11
+!URxvt*letterSpace: -1
+URxvt.perl-ext-common: default,matcher,fullscreen,kuake
+URxvt.kuake.hotkey: F12
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.urlLauncher: chromium
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt*inheritPixmap: false
+URxvt*shading: 70
+
