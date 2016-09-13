@@ -79,7 +79,15 @@ let g:airline_theme='base16'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:tmuxline_preset = 'powerline'
+" let g:tmuxline_preset = 'powerline'
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#H',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'y'    : "#(uptime  | grep -oP '(?<=average: ).*')",
+      \'z'    : '#H'}
 set noshowmode
 
 " no powerline seperators for tmuxline
