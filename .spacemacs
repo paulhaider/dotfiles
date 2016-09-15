@@ -286,6 +286,17 @@ you should place your code here."
     (add-to-list 'TeX-view-program-selection
                  '(output-pdf "Zathura"))
     (TeX-PDF-mode 1))
+
+  ;; add memoir class for org
+  (with-eval-after-load 'ox-latex
+    (add-to-list 'org-latex-classes
+                 '("memoir"
+                   "\\documentclass[twoside, a4paper, 12pt]{memoir}"
+                   ("\\part{%s}" . "\\part*{%s}")
+                   ("\\chapter{%s}" . "\\chapter*{%s}")
+                   ("\\section{%s}" . "\\section*{%s}")
+                   ("\\subsection{%s}" . "\\subsection*{%s}")
+                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
