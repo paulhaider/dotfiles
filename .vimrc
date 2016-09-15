@@ -83,9 +83,9 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : '#W',
-      \'c'    : '#(cut -d " " -f 1-3 /proc/loadavg)',
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
+      \'x'    : '#(cut -d " " -f 1-3 /proc/loadavg)',
       \'y'    : '%H:%M:%S',
       \'z'    : '#(date | cut -d " " -f 1-3 ) %Y'}
 set noshowmode
