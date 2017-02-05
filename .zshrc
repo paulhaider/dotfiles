@@ -2,6 +2,7 @@
   export EDITOR='nvim'
   alias tmux='tmux -2'
   alias vim='nvim'
+  alias emacs='emacs -nw'
   alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
   eval '$(thefuck --alias)'
 
