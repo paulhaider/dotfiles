@@ -16,6 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
 Plug 'tmhedberg/matchit'
+Plug 'joshdick/onedark.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end() " required
@@ -33,6 +34,7 @@ let base16colorspace=256
 " set background=dark
 " colorscheme base16-default " colorscheme
 " colorscheme badwolf
+" colorscheme onedark
 execute "set background=".$BACKGROUND
 execute "colorscheme ".$THEME
 
