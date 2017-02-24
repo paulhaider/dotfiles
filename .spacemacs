@@ -108,8 +108,6 @@ values."
                          gruvbox
                          spacemacs-dark
                          spacemacs-light
-                         solarized-dark
-                         solarized-light
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -260,7 +258,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (eval-after-load 'org
     '(setf org-highlight-latex-and-related '(latex)))
-  (setq-default dotspacemacs-themes '(list-themes-here))
+  ;; (setq-default dotspacemacs-themes '(list-themes-here))
   (require 'smartparens-latex)
   (setq-default TeX-master nil) ; Query for master file.
   (setq TeX-parse-self t) ; Enable parse on load.
