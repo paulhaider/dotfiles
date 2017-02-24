@@ -105,7 +105,6 @@ values."
    dotspacemacs-themes '(monokai
                          badwolf
                          leuven
-                         gruvbox
                          spacemacs-dark
                          spacemacs-light
                          zenburn)
