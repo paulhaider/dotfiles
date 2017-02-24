@@ -1,8 +1,10 @@
 # Zsh settings
-  export EDITOR='nvim'
+# export EDITOR='nvim'
+  export ALTERNATE_EDITOR=""
+  export EDITOR=emacsclient
   alias tmux='tmux -2'
   alias vim='nvim'
-  alias emacs='emacs -nw'
+  alias e='emacsclient'
   alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
   eval '$(thefuck --alias)'
 
@@ -39,6 +41,47 @@ function light() {
 
 function dark() {
     export BACKGROUND="dark" && reload
+}
+
+# shortcuts for changing the theme
+function monokai() {
+    export THEME="base16-monokai" && reload
+}
+
+function chalk() {
+    export THEME="base16-chalk" && reload
+}
+
+function embers() {
+    export THEME="base16-embers" && reload
+}
+
+function grayscale() {
+    export THEME="base16-grayscale" && reload
+}
+
+function greenscreen() {
+    export THEME="base16-greenscreen" && reload
+}
+
+function mocha() {
+    export THEME="base16-mocha" && reload
+}
+
+function marrakesh() {
+    export THEME="base16-marrakesh" && reload
+}
+
+function paraiso() {
+    export THEME="base16-paraiso" && reload
+}
+
+function bespin() {
+    export THEME="base16-bespin" && reload
+}
+
+function ocean() {
+    export THEME="base16-ocean" && reload
 }
 
 # Promptline
