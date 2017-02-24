@@ -272,7 +272,7 @@ you should place your code here."
   ;; (setq LaTeX-babel-hyphen-language-alist '(("german" "" nil)))
   ;; (setq LaTeX-babel-hyphen-language-alist '(("ngerman" "" nil)))
   (setq org-latex-pdf-process (list "latexmk %f"))
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'wave)
   (require 'server)
   (unless (server-running-p)
     (server-start))
