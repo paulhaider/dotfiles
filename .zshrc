@@ -1,13 +1,12 @@
 # Zsh settings
-# export EDITOR='nvim'
-  export ALTERNATE_EDITOR=""
-  export EDITOR=emacsclient
-  alias tmux='tmux -2'
-  alias vi='nvim'
-  alias emacs='emacsclient -t'
-  alias xmacs='emacsclient -c'
-  alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
-  eval '$(thefuck --alias)'
+export ALTERNATE_EDITOR=""
+export EDITOR=emacsclient
+alias tmux='tmux -2'
+alias vi='nvim'
+alias emacs='emacsclient -t'
+alias xmacs='emacsclient -c'
+alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
+eval '$(thefuck --alias)'
 
 # reload zsh config
 alias reload='source ~/.zshrc'
@@ -18,10 +17,7 @@ KEYTIMEOUT=1
 # Set 256 colors if not in tmux
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
-# Base16 Shell
-# BASE16_SHELL="$HOME/.config/base16-shell/base16-chalk.dark.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
+# Theming
 # Base16 Shell
 if [ -z "$THEME" ]; then
     export THEME="base16-monokai"
@@ -32,7 +28,6 @@ if [ -z "$BACKGROUND" ]; then
 fi
 
 BASE16_SHELL="$HOME/.config/base16-shell/$THEME.$BACKGROUND.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
 
 # set the background color to light
