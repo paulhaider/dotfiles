@@ -94,24 +94,27 @@ antigen use oh-my-zsh
 # antigen bundle robbyrussell/oh-my-zsh lib/
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle archlinux
-antigen bundle tmux
-# antigen bundle common-aliases # causes "remove ~/.zcompdump?"
+antigen bundle robbyrussell/oh-my-zsh plugins/git
+antigen bundle robbyrussell/oh-my-zsh plugins/archlinux
+antigen bundle robbyrussell/oh-my-zsh plugins/tmux
+# antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases # causes "remove ~/.zcompdump?"
 antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
 # antigen theme Huvik/Cloudy
 # antigen theme pure
-antigen theme lambda
+# antigen theme lambda
 # antigen theme suvash
-# antigen theme half-life
+antigen theme half-life
 # antigen theme fwalch
 # antigen theme wezm
 # antigen theme awesomepanda
 # antigen theme avit
 # antigen theme halfo/lambda-mod-zsh-theme # doesn't start properly
+
+#External themes
+# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
 # Tell antigen that you're done.
 antigen apply
