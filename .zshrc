@@ -107,6 +107,10 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme lambda
 # antigen theme suvash
 # antigen theme half-life
+# antigen theme fwalch
+# antigen theme wezm
+# antigen theme awesomepanda
+# antigen theme avit
 # antigen theme halfo/lambda-mod-zsh-theme # doesn't start properly
 
 # Tell antigen that you're done.
