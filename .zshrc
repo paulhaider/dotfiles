@@ -3,8 +3,9 @@
   export ALTERNATE_EDITOR=""
   export EDITOR=emacsclient
   alias tmux='tmux -2'
-  alias vim='nvim'
-  alias e='emacsclient'
+  alias vi='nvim'
+  alias emacs='emacsclient -t'
+  alias xmacs='emacsclient -c'
   alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
   eval '$(thefuck --alias)'
 
@@ -148,6 +149,7 @@ plugins=(git archlinux tmux common-aliases)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+alias -s pdf=zathura
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
