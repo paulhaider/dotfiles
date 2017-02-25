@@ -91,16 +91,26 @@ source ~/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
+# antigen bundle robbyrussell/oh-my-zsh lib/
+
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle archlinux
 antigen bundle tmux
-antigen bundle common-aliases
+# antigen bundle common-aliases # causes "remove ~/.zcompdump?"
 antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
-antigen theme halfo/lambda-mod-zsh-theme
 # antigen theme Huvik/Cloudy
+# antigen theme pure
+antigen theme lambda
+# antigen theme suvash
+# antigen theme half-life
+# antigen theme halfo/lambda-mod-zsh-theme # doesn't start properly
+
+# Tell antigen that you're done.
+antigen apply
 
 # Promptline
 # source ~/.shell_prompt.sh
