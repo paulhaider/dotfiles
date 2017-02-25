@@ -274,6 +274,15 @@ you should place your code here."
   (unless (server-running-p)
     (server-start))
 
+  ;; fix teminal themes
+  (add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (select-frame frame)
+              (if (not window-system)
+                  (custom-set-faces '(default ((t (:background "nil")))))
+                (custom-set-faces '(default ((t (background dark))))))))
+
+
   ;; LaTeX Synchronization
   (with-eval-after-load "tex"
     (add-to-list 'TeX-view-program-list
