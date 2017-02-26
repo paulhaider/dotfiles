@@ -17,6 +17,9 @@ KEYTIMEOUT=1
 # Set 256 colors if not in tmux
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
+# Gopass autocompletion
+source <(gopass completion zsh)
+
 # Theming
 # Base16 Shell
 if [ -z "$THEME" ]; then
@@ -97,11 +100,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
+antigen theme pure
 # antigen theme Huvik/Cloudy
-# antigen theme pure
 # antigen theme lambda
 # antigen theme suvash
-antigen theme half-life
+# antigen theme half-life
 # antigen theme fwalch
 # antigen theme wezm
 # antigen theme awesomepanda
