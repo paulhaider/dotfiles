@@ -8,6 +8,8 @@ alias xmacs='emacsclient -c'
 alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
 eval '$(thefuck --alias)'
 
+alias -s pdf=zathura
+
 # reload zsh config
 alias reload='source ~/.zshrc'
 
@@ -100,11 +102,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
-antigen theme pure
+# antigen theme refined
 # antigen theme Huvik/Cloudy
 # antigen theme lambda
 # antigen theme suvash
-# antigen theme half-life
+antigen theme half-life
 # antigen theme fwalch
 # antigen theme wezm
 # antigen theme awesomepanda
