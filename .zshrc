@@ -102,11 +102,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
-# antigen theme refined
+antigen theme refined
 # antigen theme Huvik/Cloudy
 # antigen theme lambda
 # antigen theme suvash
-antigen theme half-life
+# antigen theme half-life
 # antigen theme fwalch
 # antigen theme wezm
 # antigen theme awesomepanda
