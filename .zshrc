@@ -1,4 +1,4 @@
-# Zsh settings
+# zsh settings
 export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 alias tmux='tmux -2'
@@ -6,8 +6,15 @@ alias vi='nvim'
 alias emacs='emacsclient -t'
 alias xmacs='emacsclient -c'
 alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
-eval '$(thefuck --alias)'
 
+# thefuck
+eval $(thefuck --alias)
+
+# make home and end keys work inside zsh
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+
+# use zathura to open pdf files
 alias -s pdf=zathura
 
 # reload zsh config
@@ -16,74 +23,15 @@ alias reload='source ~/.zshrc'
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-# Set 256 colors if not in tmux
+# set 256 colors if not in tmux
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
-# Gopass autocompletion
+# gopass autocompletion
 source <(gopass completion zsh)
 
-# Theming
 # Base16 Shell
-if [ -z "$THEME" ]; then
-    export THEME="base16-monokai"
-fi
-
-if [ -z "$BACKGROUND" ]; then
-    export BACKGROUND="dark"
-fi
-
-BASE16_SHELL="$HOME/.config/base16-shell/$THEME.$BACKGROUND.sh"
-source $BASE16_SHELL
-
-# set the background color to light
-function light() {
-    export BACKGROUND="light" && reload
-}
-
-function dark() {
-    export BACKGROUND="dark" && reload
-}
-
-# shortcuts for changing the theme
-function monokai() {
-    export THEME="base16-monokai" && reload
-}
-
-function chalk() {
-    export THEME="base16-chalk" && reload
-}
-
-function embers() {
-    export THEME="base16-embers" && reload
-}
-
-function grayscale() {
-    export THEME="base16-grayscale" && reload
-}
-
-function greenscreen() {
-    export THEME="base16-greenscreen" && reload
-}
-
-function mocha() {
-    export THEME="base16-mocha" && reload
-}
-
-function marrakesh() {
-    export THEME="base16-marrakesh" && reload
-}
-
-function paraiso() {
-    export THEME="base16-paraiso" && reload
-}
-
-function bespin() {
-    export THEME="base16-bespin" && reload
-}
-
-function ocean() {
-    export THEME="base16-ocean" && reload
-}
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Source antigen
 source ~/antigen/antigen.zsh
@@ -102,9 +50,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
-antigen theme refined
+# antigen theme refined
 # antigen theme Huvik/Cloudy
-# antigen theme lambda
+antigen theme lambda
 # antigen theme suvash
 # antigen theme half-life
 # antigen theme fwalch
