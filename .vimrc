@@ -18,9 +18,10 @@ filetype indent on " load filetype-specific indent files
 
 " colorscheme configuration
 set t_Co=256
-let base16colorspace=256
-set background=dark
-execute "colorscheme base16-".$BASE16_THEME
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 8
