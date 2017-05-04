@@ -1,10 +1,20 @@
 # zsh settings
-export ALTERNATE_EDITOR=""
-export EDITOR=emacsclient
+
+# vim as default editor in the terminal
+export VISUAL=vim
+export EDITOR=vim
+# but still use emacs mode for ZLE (Zsh Line Editor)
+bindkey -e
+
+# emacs as daemon
+# export ALTERNATE_EDITOR=""
+# export EDITOR="emacsclient -t"
+# alias emax='emacsclient -t'
+# alias xmax='emacsclient -c'
+
+#aliases
 alias tmux='tmux -2'
-alias vi='nvim'
-alias emacs='emacsclient -t'
-alias xmacs='emacsclient -c'
+alias vi='vim'
 alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
 
 # thefuck
