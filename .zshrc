@@ -13,6 +13,8 @@ eval $(thefuck --alias)
 # make home and end keys work inside zsh
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
 
 # use zathura to open pdf files
 alias -s pdf=zathura
@@ -24,7 +26,7 @@ alias reload='source ~/.zshrc'
 KEYTIMEOUT=1
 
 # set 256 colors if not in tmux
-[[ $TMUX = "" ]] && export TERM="xterm-256color"
+# [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
 # gopass autocompletion
 source <(gopass completion zsh)
