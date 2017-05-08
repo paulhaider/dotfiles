@@ -21,8 +21,8 @@ alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
 eval $(thefuck --alias)
 
 # make home and end keys work inside zsh
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+# bindkey "${terminfo[khome]}" beginning-of-line
+# bindkey "${terminfo[kend]}" end-of-line
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 
@@ -56,7 +56,7 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle robbyrussell/oh-my-zsh plugins/git
 antigen bundle robbyrussell/oh-my-zsh plugins/archlinux
-antigen bundle robbyrussell/oh-my-zsh plugins/tmux
+# antigen bundle robbyrussell/oh-my-zsh plugins/tmux
 # antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases # causes "remove ~/.zcompdump?"
 antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
