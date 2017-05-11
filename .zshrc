@@ -1,8 +1,17 @@
 # zsh settings
 
 # vim as default editor in the terminal
-export VISUAL=vim
-export EDITOR=vim
+if [[ -d $HOME/.config/nvim ]]
+then
+	export VISUAL=nvim
+	export EDITOR=nvim
+	alias vi='nvim'
+else
+	export VISUAL=vim
+	export EDITOR=vim
+	alias vi='vim'
+fi
+
 # but still use emacs mode for ZLE (Zsh Line Editor)
 bindkey -e
 
@@ -14,7 +23,6 @@ bindkey -e
 
 #aliases
 alias tmux='tmux -2'
-alias vi='vim'
 alias dcfg='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
 
 # thefuck
