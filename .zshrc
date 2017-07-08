@@ -37,9 +37,6 @@ bindkey "\e[4~" end-of-line
 # use zathura to open pdf files
 alias -s pdf=zathura
 
-# reload zsh config
-alias reload='source ~/.zshrc'
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 
@@ -62,10 +59,10 @@ antigen use oh-my-zsh
 # antigen bundle robbyrussell/oh-my-zsh lib/
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle robbyrussell/oh-my-zsh plugins/git
-antigen bundle robbyrussell/oh-my-zsh plugins/archlinux
-# antigen bundle robbyrussell/oh-my-zsh plugins/tmux
-# antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases # causes "remove ~/.zcompdump?"
+antigen bundle git
+antigen bundle archlinux
+# antigen bundle tmux
+# antigen bundle common-aliases # causes "remove ~/.zcompdump?"
 antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
