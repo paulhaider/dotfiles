@@ -284,6 +284,7 @@ exec --no-startup-id clipit
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id libinput-gestures-setup start
 exec_always --no-startup-id fix_xcursor
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
@@ -343,7 +344,7 @@ gaps outer -4
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
