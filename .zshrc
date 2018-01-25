@@ -44,7 +44,7 @@ KEYTIMEOUT=1
 # [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
 # gopass autocompletion
-source <(gopass completion zsh)
+# source <(gopass completion zsh)
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
