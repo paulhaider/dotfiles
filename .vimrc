@@ -23,6 +23,9 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
+" colorscheme badwolf
+" let g:badwolf_darkgutter = 1
+
 if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 8
 endif
