@@ -67,7 +67,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions # causes crash
 
 # Load the theme.
-antigen theme refined
+# antigen theme refined
 # antigen theme Huvik/Cloudy
 # antigen theme lambda
 # antigen theme suvash
@@ -76,7 +76,7 @@ antigen theme refined
 # antigen theme wezm
 # antigen theme awesomepanda
 # antigen theme avit
-# antigen theme halfo/lambda-mod-zsh-theme # doesn't start properly
+antigen theme halfo/lambda-mod-zsh-theme
 
 #External themes
 # antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
