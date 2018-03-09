@@ -23,9 +23,6 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-" colorscheme badwolf
-" let g:badwolf_darkgutter = 1
-
 if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 8
 endif
@@ -51,48 +48,30 @@ set lazyredraw " redraw only when need to
 set incsearch " set as characteres are entered
 set hlsearch " highlight matches
 " set breakindent
+set noshowmode "hide default mode text already shown by airline
 
 " toggle invisible characters
 set invlist
-set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
-" set listchars=tab:▸\ ,eol:↩,trail:⋅,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:↩,trail:⋅,extends:❯,precedes:❮
 
 " Plugin specific configuration
 
 " airline configuration
 set laststatus=2 "show airline all the time
 let g:airline_theme='base16'
-" let g:airline_theme='badwolf'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 1 "use powerline fonts
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'y'    : ['%R', '%a', '%Y'],
+      \'z'    : '#H'}
 
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = 'Ξ'
-" let g:airline_symbols.linenr = ''
-
-let g:tmuxline_preset = 'powerline'
-" tmuxline preset showing loadavg
-" let g:tmuxline_preset = {
-"       \'a'    : '#S',
-"       \'b'    : '#W',
-"       \'win'  : ['#I', '#W'],
-"       \'cwin' : ['#I', '#W', '#F'],
 "       \'x'    : '#(cut -d " " -f 1-3 /proc/loadavg)',
-"       \'y'    : '%H:%M:%S',
-"       \'z'    : '#(date | cut -d " " -f 1-3 ) %Y'}
-set noshowmode " already shown by airline
 
 " no powerline seperators for tmuxline
 " let g:tmuxline_separators = {
