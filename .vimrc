@@ -66,9 +66,22 @@ let g:airline_theme='base16'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
-let g:airline_powerline_fonts = 0 "use powerline fonts
-let g:airline_symbols = get (g:,'airline_symbols',{})
-let g:airline_symbols.maxlinenr='' " don't show symbol after line number
+let g:airline_powerline_fonts = 1 "use powerline fonts
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = 'Ξ'
+" let g:airline_symbols.linenr = ''
+
 let g:tmuxline_preset = 'powerline'
 " tmuxline preset showing loadavg
 " let g:tmuxline_preset = {
@@ -82,9 +95,9 @@ let g:tmuxline_preset = 'powerline'
 set noshowmode " already shown by airline
 
 " no powerline seperators for tmuxline
-let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '>',
-    \ 'right' : '',
-    \ 'right_alt' : '<',
-    \ 'space' : ' '}
+" let g:tmuxline_separators = {
+"     \ 'left' : '',
+"     \ 'left_alt': '>',
+"     \ 'right' : '',
+"     \ 'right_alt' : '<',
+"     \ 'space' : ' '}
