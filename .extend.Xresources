@@ -48,7 +48,7 @@ Xcursor.size:                     0
 ! XTerm*faceName:                   Terminus:size=11:antialias=true
 ! XTerm*selectToClipboard:          true
 
-URxvt.font:                       xft:UbuntuMono Nerd Font Mono:pixelsize=16,xft:DejaVuSansMono Nerd Font Mono:style=Book:pixelsize=16
+URxvt.font:                       xft:SauceCodePro Nerd Font Mono:pixelsize=15:antialias=true:hinting=true,xft:DejaVuSansMono Nerd Font Mono:style=Book:pixelsize=15:antialias=true:hinting=true
 URxvt.letterSpace:                -1
 
 ! alternative fonts
