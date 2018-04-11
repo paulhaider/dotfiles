@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'sjl/badwolf'
+Plug 'scrooloose/nerdtree'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -24,7 +25,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 8
+  set guifont=SauceCodePro\ Nerd\ Font\ Mono\ 10
 endif
 
 " change working directory to current file
