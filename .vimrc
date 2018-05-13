@@ -10,6 +10,7 @@ Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-latex/vim-latex'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
