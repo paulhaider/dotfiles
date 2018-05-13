@@ -113,7 +113,7 @@ uptime_shorthand="on"
 # Example:
 # on:  '/bin/bash'
 # off: 'bash'
-shell_path="on"
+shell_path="off"
 
 # Show $SHELL version
 #
