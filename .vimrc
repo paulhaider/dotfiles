@@ -8,6 +8,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -51,6 +53,8 @@ set hlsearch " highlight matches
 " set breakindent
 set noshowmode "hide default mode text already shown by airline
 
+set updatetime=100 "set delay
+
 " toggle invisible characters
 set invlist
 set listchars=tab:▸\ ,eol:↩,trail:⋅,extends:❯,precedes:❮
@@ -81,3 +85,10 @@ let g:tmuxline_preset = {
 "     \ 'right' : '',
 "     \ 'right_alt' : '<',
 "     \ 'space' : ' '}
+
+" GitGutter configuration
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='◢'
+let g:gitgutter_sign_removed_first_line='◥'
+let g:gitgutter_sign_modified_removed='◢'
