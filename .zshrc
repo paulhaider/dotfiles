@@ -24,7 +24,7 @@ bindkey -e
 #aliases
 alias tmux='tmux -2'
 alias dots='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
-alias vis='TERM=xterm-256color && vis && TERM=rxvt-unicode'
+# alias vis='TERM=xterm-256color && vis && TERM=rxvt-unicode'
 
 # thefuck
 eval $(thefuck --alias)
