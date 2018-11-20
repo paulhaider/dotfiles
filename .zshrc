@@ -15,6 +15,9 @@ fi
 # but still use emacs mode for ZLE (Zsh Line Editor)
 bindkey -e
 
+# set variables for FeynArts, FeynCalc and LoopTools
+export LT=$HOME/Software/LoopTools/x86_64-Linux
+
 # emacs as daemon
 # export ALTERNATE_EDITOR=""
 # export EDITOR="emacsclient -t"
@@ -27,7 +30,7 @@ alias dots='/usr/bin/git --git-dir=/home/paul/.dotfiles/ --work-tree=/home/paul'
 # alias vis='TERM=xterm-256color && vis && TERM=rxvt-unicode'
 
 # thefuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # make home and end keys work inside zsh
 # bindkey "${terminfo[khome]}" beginning-of-line
