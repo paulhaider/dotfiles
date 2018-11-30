@@ -81,6 +81,7 @@ let g:tmuxline_preset = {
 "       \'x'    : '#(cut -d " " -f 1-3 /proc/loadavg)',
 
 " no powerline seperators for tmuxline
+let g:tmuxline_powerline_separators = 0
 " let g:tmuxline_separators = {
 "     \ 'left' : '',
 "     \ 'left_alt': '>',
