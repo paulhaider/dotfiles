@@ -41,7 +41,8 @@ set mouse=a " mouse scrolling
 set tabstop=2 " number of visual spaces per TAB
 set shiftwidth=2 " when indenting, use 2 spaces width
 " set softtabstop=4 " number of spaces in tab when editing
-" set expandtab " tabs are spaces
+set expandtab " tabs are spaces
+au BufNewFile,BufReadPost Makefile se noexpandtab " But TABs are needed in Makefiles
 set number " show line numbers
 set relativenumber " show relative line numbers
 set showcmd " show commmand in bottom bar
