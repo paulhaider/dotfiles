@@ -69,7 +69,7 @@ let g:airline_theme='base16'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
-let g:airline_powerline_fonts = 1 "use powerline fonts
+let g:airline_powerline_fonts = 0 "use powerline fonts
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
