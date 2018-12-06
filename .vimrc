@@ -12,7 +12,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-latex/vim-latex'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
