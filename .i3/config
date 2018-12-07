@@ -141,14 +141,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6:6 "
+set $ws7 "7:7 "
+set $ws8 "8:8 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -278,7 +278,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+# exec --no-startup-id clipit
 # exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -287,57 +287,62 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id libinput-gestures-setup start
 exec_always --no-startup-id fix_xcursor
 
-# # Start i3bar to display a workspace bar (plus the system information i3status if available)
-# bar {
-# 	status_command i3status
-# 	position bottom
-#
-# ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-# #	tray_output primary
-# #	tray_output eDP1
-#
-# 	bindsym button4 nop
-# 	bindsym button5 nop
-# 	font xft:Noto Sans 10.5
-# 	strip_workspace_numbers yes
-#
-# 	colors {
-# #       background $transparent
-#         background #2B2C2B
-#         statusline #F9FAF9
-#         separator  #454947
-#
-# #                                  border  backgr. text
-#         focused_workspace  #F9FAF9 #16A085 #2B2C2B
-#         active_workspace   #595B5B #353836 #FDF6E3
-#         inactive_workspace #595B5B #353836 #EEE8D5
-#         urgent_workspace   #16A085 #FDF6E3 #E5201D
-#     }
-# }
+# Define colors
+set $bg-color            #282828
+set $inactive-bg-color   #282828
+set $text-color          #F8F8F8
+set $inactive-text-color #585858
+set $urgent-bg-color     #AB4642
+
+# Theme colors
+# class                 border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+  status_command i3blocks -c $HOME/.i3/i3blocks.conf
+  position top
+
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+# tray_output primary
+# tray_output eDP1
+
+  bindsym button4 nop
+  bindsym button5 nop
+  font xft:Noto Sans 10.5
+  strip_workspace_numbers yes
+
+
+# window colors
+  colors {
+    background $bg-color
+    statusline #F9F9F9
+    separator  #454947
+
+#                      border             background         text
+    focused_workspace  $bg-color          $bg-color          $text-color
+    active_workspace   $bg-color          $bg-color          $text-color
+    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+  }
+}
 
 # Start polybar to display a workspace bar (plus the system information i3status if available)
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
-
-# Theme colors
-# class                 border  backgr. text    indic.  child_border
-client.focused          #808280 #808280 #80FFF9 #FDF6E3
-client.focused_inactive #434745 #434745 #16A085 #454948
-client.unfocused        #434745 #434745 #16A085 #454948
-client.urgent           #CB4B16 #FDF6E3 #16A085 #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
-
-client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 20
-gaps outer -4
+gaps inner 10
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
