@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-latex/vim-latex'
 Plug 'vim-syntastic/syntastic'
+Plug 'ervandew/supertab'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -55,6 +56,9 @@ set incsearch " set as characteres are entered
 set hlsearch " highlight matches
 " set breakindent
 set noshowmode "hide default mode text already shown by airline
+
+set textwidth=80
+set colorcolumn=+1
 
 set updatetime=100 "set delay
 
