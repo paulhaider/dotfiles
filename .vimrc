@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-latex/vim-latex'
 Plug 'vim-syntastic/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -71,6 +72,13 @@ let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 1 "use powerline fonts
+let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#fnametruncate = 16
+let g:airline#extensions#tabline#fnamecollapse = 2
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
