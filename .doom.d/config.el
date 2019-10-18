@@ -14,3 +14,16 @@
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
+
+;; Latex specific configuartion for Org mode
+(require 'ox-latex)
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+(add-to-list 'org-latex-classes
+             '("mimosis"
+               "\\documentclass{mimosis}"
+               ("\\part{%s}" . "\\part*{%s}")
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
