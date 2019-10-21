@@ -28,6 +28,7 @@ export LT=$HOME/Software/LoopTools/x86_64-Linux
 alias tmux='tmux -2'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # alias vis='TERM=xterm-256color && vis && TERM=rxvt-unicode'
+alias ol='$HOME/Software/OpenLoops/build/src/openloops'
 
 # configure using GNU compilers
 alias gconfwrap='FC=gfortran CC=gcc CXX=g++ ./configure --generic'
