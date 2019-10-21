@@ -15,6 +15,10 @@
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
+;; useful tools for getting bibtex entries and pdf files of journal manuscripts
+(require 'doi-utils)
+(require 'org-ref-arxiv)
+
 ;; Latex specific configuartion for Org mode
 (require 'ox-latex)
 (unless (boundp 'org-latex-classes)
