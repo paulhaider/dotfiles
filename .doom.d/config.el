@@ -18,6 +18,7 @@
 ;; useful tools for getting bibtex entries and pdf files of journal manuscripts
 (require 'doi-utils)
 (require 'org-ref-arxiv)
+(setq bibtex-dialect 'biblatex)
 
 ;; Latex specific configuartion for Org mode
 (require 'ox-latex)
@@ -30,4 +31,5 @@
                ("\\chapter{%s}" . "\\chapter*{%s}")
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
