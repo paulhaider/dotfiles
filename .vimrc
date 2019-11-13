@@ -13,7 +13,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-latex/vim-latex'
 Plug 'vim-syntastic/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ervandew/supertab'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -22,6 +21,8 @@ syntax enable " enable syntax highlighting
 filetype on " detect filetype
 filetype plugin on " load filetype-specific plugin files
 filetype indent on " load filetype-specific indent files
+autocmd BufNewFile,BufRead *.wl set syntax=mma
+autocmd BufNewFile,BufRead *.mod set syntax=mma
 
 " colorscheme configuration
 set t_Co=256
@@ -41,10 +42,11 @@ endif
 set clipboard=unnamedplus " access system clipboard
 set mouse=a " mouse scrolling
 " " set timeoutlen=1000 ttimeoutlen=0
-set tabstop=2 " number of visual spaces per TAB
-set shiftwidth=2 " when indenting, use 2 spaces width
-" set softtabstop=4 " number of spaces in tab when editing
+set tabstop=4 " number of visual spaces per TAB
+set softtabstop=0 " number of spaces in tab when editing
 set expandtab " tabs are spaces
+set shiftwidth=2 " when indenting, use 2 spaces width
+set smarttab
 au BufNewFile,BufReadPost Makefile se noexpandtab " But TABs are needed in Makefiles
 set number " show line numbers
 set relativenumber " show relative line numbers
