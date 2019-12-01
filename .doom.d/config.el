@@ -10,7 +10,7 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
@@ -19,6 +19,12 @@
 (require 'doi-utils)
 (require 'org-ref-arxiv)
 (setq bibtex-dialect 'biblatex)
+
+(require 'org)
+(setq org-list-allow-alphabetical t)
+
+(require 'projectile)
+(setq projectile-enable-caching t)
 
 ;; Latex specific configuartion for Org mode
 (require 'ox-latex)
@@ -33,3 +39,13 @@
                ("\\subsection{%s}" . "\\subsection*{%s}")
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
+(add-to-list 'org-latex-classes
+             '("mimosis_nopart"
+               "\\documentclass{mimosis}"
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
+(setq org-latex-listings t)
+(add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
