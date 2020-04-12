@@ -38,14 +38,6 @@ exec swayidle -w \
        resume 'swaymsg "output * dpms on"' \
        before-sleep 'swaylock-blur'
 #
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -53,11 +45,15 @@ exec swayidle -w \
 ### Input configuration
 #
     # use neo layout
-    input * xkb_layout "de"
-    input * xkb_variant "neo"
+    input type:keyboard {
+        xkb_layout de
+        xkb_variant neo
+        # menu is mapped to win
+        xkb_options altwin:menu_win
+    }
 
     # touchpad configuration
-    input "1267:12322:ELAN1200:00_04F3:3022_Touchpad" {
+    input type:touchpad {
         dwt enabled
         tap enabled
         natural_scroll disabled
