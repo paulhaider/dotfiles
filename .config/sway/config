@@ -165,6 +165,9 @@ exec swayidle -w \
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
+
+    # use grim, slurp and wl-clipboard, to screenshot directly with Print button to clipboard
+    bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 #
 # Layout stuff:
 #
