@@ -61,8 +61,8 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+        "icon-size": 20,
+        "spacing": 5
     },
     "clock": {
         // "timezone": "America/New_York",
