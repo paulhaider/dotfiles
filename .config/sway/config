@@ -173,8 +173,12 @@ exec swayidle -w \
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
 
-    # use grim, slurp and wl-clipboard, to screenshot directly with Print button to clipboard
-    bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
+    # use grim and slurp to screenshot directly with Print button
+    set $screenshot grim ~/Pictures/Screenshots/$(date +"%Y%m%d_%Hh%Mm%Ss")_grim.png
+    set $screenclip slurp | grim -g - ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+    bindsym $mod+Print exec $screenshot
+    bindsym $mod+Shift+Print exec $screenclip
+
 #
 # Layout stuff:
 #
