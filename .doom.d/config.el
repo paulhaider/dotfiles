@@ -10,10 +10,13 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one-light t)
+(load-theme 'doom-one t)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
+
+;; Load the font
+(setq doom-font (font-spec :family "Fira Code Retina" :size 14))
 
 ;; useful tools for getting bibtex entries and pdf files of journal manuscripts
 (require 'doi-utils)
