@@ -259,6 +259,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Autostart applications
+#
+# set gtk-theme, icon-theme and cursor-theme for gtk programs
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adapta-Nokto-Eta-Maia'
+    gsettings set $gnome-schema icon-theme 'Papirus-Adapta-Nokto-Maia'
+    gsettings set $gnome-schema cursor-theme 'Maia-Cursor'
+}
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
