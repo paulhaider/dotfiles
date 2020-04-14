@@ -22,6 +22,8 @@ set $dmenu j4-dmenu-desktop --dmenu="bemenu -ib" --no-generic --term=kitty
 
 ### Output configuration
 #
+output eDP-1 res 1920x1080 pos 0,0
+output HDMI-A-2 mode 1920x1080@50Hz pos 1920,0
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/paul/Pictures/Wallpapers/forestlake.jpg fill
 #
@@ -32,6 +34,7 @@ output * bg /home/paul/Pictures/Wallpapers/forestlake.jpg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
+#
 exec swayidle -w \
        timeout 300 'swaylock-blur' \
        timeout 600 'swaymsg "output * dpms off"' \
