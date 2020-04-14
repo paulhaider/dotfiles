@@ -275,6 +275,10 @@ exec_always {
     gsettings set $gnome-schema cursor-theme 'Maia-Cursor'
 }
 
+# start tray applets
+exec nm-applet --indicator
+exec blueman-applet
+
 #
 # Color settings
 #
@@ -304,7 +308,7 @@ bar {
 # Gaps
 #
 # Set inner/outer gaps
-gaps inner 30
+gaps inner 10
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
