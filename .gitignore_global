@@ -40,9 +40,13 @@
 ehthumbs.db
 Thumbs.db
 
-# LaTeX files     #
+# LaTeX files        #
 ######################
 *.aux
 *.log
 *.out
 *.pdf
+
+# Emacs files        #
+######################
+*.auctex-auto
