@@ -38,7 +38,7 @@
 *color7:                          #E0E0E0
 *color15:                         #E8E8E8
 
-Xcursor.theme: Adwaita
+Xcursor.theme: xcursor-breeze-snow
 Xcursor.size:                     0
 
 ! XTerm*termName:                   xterm-256color
