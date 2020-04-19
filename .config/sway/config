@@ -270,9 +270,9 @@ bindsym $mod+r mode "resize"
 # set gtk-theme, icon-theme and cursor-theme for gtk programs
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adapta-Nokto-Eta-Maia'
-    gsettings set $gnome-schema icon-theme 'Papirus-Adapta-Nokto-Maia'
-    gsettings set $gnome-schema cursor-theme 'Maia-Cursor'
+    gsettings set $gnome-schema gtk-theme 'Adapta-Nokto-Eta'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'xcursor-breeze-snow'
 }
 
 # start tray applets
@@ -312,7 +312,7 @@ gaps inner 10
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
