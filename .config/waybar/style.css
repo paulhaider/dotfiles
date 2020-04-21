@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: DroidSans, FontAwesome;
+    font-family: NotoSans, NotoSansMono Nerd Font;
     font-size: 16px;
     min-height: 0;
 }
