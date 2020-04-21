@@ -27,7 +27,6 @@ export LT=$HOME/Software/LoopTools/x86_64-Linux
 #aliases
 alias tmux='tmux -2'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-# alias vis='TERM=xterm-256color && vis && TERM=rxvt-unicode'
 alias ol='$HOME/Software/OpenLoops/build/src/openloops'
 
 # configure using GNU compilers
@@ -39,11 +38,11 @@ alias gconfwrap='FC=gfortran CC=gcc CXX=g++ ./configure --generic'
 # make home and end keys work inside zsh
 # bindkey "${terminfo[khome]}" beginning-of-line
 # bindkey "${terminfo[kend]}" end-of-line
-bindkey "\e[1~" beginning-of-line
-bindkey "\e[4~" end-of-line
+# bindkey "\e[1~" beginning-of-line
+# bindkey "\e[4~" end-of-line
 
-# use zathura to open pdf files
-alias -s pdf=zathura
+# use zathura to open pdf files (but doesn't work)
+# alias -s pdf=zathura
 
 # 10ms for key sequences
 KEYTIMEOUT=1
@@ -54,9 +53,8 @@ KEYTIMEOUT=1
 # gopass autocompletion
 # source <(gopass completion zsh)
 
-# Base16 Shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# zsh edge theme
+source ~/.vim/plugged/edge/zsh/.zsh-theme-edge-dark
 
 # Source antigen
 source ~/.config/antigen/antigen.zsh
@@ -86,7 +84,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 # antigen theme avit
 antigen theme halfo/lambda-mod-zsh-theme
 
-#External themes
+# External themes
 # antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
 # Tell antigen that you're done.

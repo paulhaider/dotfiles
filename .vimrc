@@ -3,17 +3,16 @@ set nocompatible " not compatible with vi but make vim behave in a more useful w
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
+Plug 'sainnhe/edge'
 Plug 'edkolev/tmuxline.vim'
-Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 Plug 'vim-syntastic/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'mboughaba/i3config.vim'
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -26,11 +25,12 @@ autocmd BufNewFile,BufRead *.wl set syntax=mma
 autocmd BufNewFile,BufRead *.mod set syntax=mma
 
 " colorscheme configuration
-set t_Co=256
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+set termguicolors
+set background=dark
+" the configuration options should be placed before `colorscheme edge`
+let g:edge_style = 'default'
+let g:edge_disable_italic_comment = 0
+colorscheme edge
 
 if has('gui_running')
   set guifont=SauceCodePro\ Nerd\ Font\ Mono\ 10
@@ -74,7 +74,7 @@ set listchars=tab:▸\ ,eol:↩,trail:⋅,extends:❯,precedes:❮
 
 " airline configuration
 set laststatus=2 "show airline all the time
-let g:airline_theme='base16'
+let g:airline_theme='edge'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
