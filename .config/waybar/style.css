@@ -8,8 +8,9 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 2px solid rgba(100, 114, 125, 0.5);
+    background-color: transparent;
+    /* background-color: rgba(43, 48, 59, 0.5); */
+    /* border-bottom: 2px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -39,6 +40,7 @@ window#waybar.chromium {
 
 #workspaces button {
     padding: 0 2px;
+    margin: 0 2px;
     background-color: transparent;
     color: #ffffff;
     border-bottom: 2px solid transparent;
@@ -157,7 +159,8 @@ label:focus {
 }
 
 #custom-media.custom-spotify {
-    background-color: #1DB954;
+    background-color: transparent;
+    color: #1DB954;
     border-bottom: 2px solid transparent;
 }
 
