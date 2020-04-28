@@ -3,6 +3,8 @@
 
 (package! org-ref)
 (package! darkroom)
+(package! writeroom-mode)
+
 ;;; Examples:
 ;; (package! some-package)
 ;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
