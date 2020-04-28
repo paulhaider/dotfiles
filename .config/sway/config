@@ -282,6 +282,7 @@ exec_always {
 # start tray applets
 exec nm-applet --indicator
 exec blueman-applet
+exec redshift-gtk
 
 #
 # Color settings
