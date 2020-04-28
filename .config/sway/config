@@ -27,7 +27,7 @@ set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="ur
 output eDP-1 res 1920x1080 pos 0,0
 output HDMI-A-2 mode 1920x1080@50Hz pos 1920,0
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/paul/Pictures/Wallpapers/forestlake.jpg fill
+output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan.jpg fill
 #
 # Example configuration:
 #
