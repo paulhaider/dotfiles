@@ -25,6 +25,7 @@ export LT=$HOME/Software/LoopTools/x86_64-Linux
 # alias xmax='emacsclient -c'
 
 #aliases
+alias emacs='emacs -nw'
 alias tmux='tmux -2'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ol='$HOME/Software/OpenLoops/build/src/openloops'
