@@ -68,7 +68,7 @@
         // "timezone": "America/New_York",
         "format": " {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": " {:%d.%m.%Y}"
     },
     "cpu": {
         "format": " {usage}%",
@@ -98,10 +98,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -120,8 +120,8 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "{icon} 婢 {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "{icon} 婢 {format_source}",
         "format-muted": "婢 {format_source}",
         "format-source": "",
         "format-source-muted": "",
