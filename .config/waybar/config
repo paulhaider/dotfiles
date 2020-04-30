@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "backlight", "pulseaudio", "battery", "tray", "clock"],
+    "modules-right": ["custom/weather", "idle_inhibitor", "backlight", "pulseaudio", "battery", "tray", "clock"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -149,5 +149,13 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/weather": {
+        "format": "{}",
+        "interval": 3600,
+        // "exec": "$HOME/.config/waybar/weather.sh",
+        "exec": "ansiweather -l Freiburg,DE -u metric -s true -f 1 -a false | cut -d' ' -f2,8-",
+        "exec-if": "ping openweathermap.org -c1",
+        "tooltip": "false"
     }
 }
