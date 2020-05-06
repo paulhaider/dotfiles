@@ -158,7 +158,8 @@
         "format": "{}",
         "interval": 3600,
         // "exec": "$HOME/.config/waybar/weather.sh",
-        "exec": "ansiweather -l Freiburg,DE -u metric -s true -f 1 -a false | cut -d' ' -f2,8-",
+        // "exec": "ansiweather -l Freiburg,DE -u metric -s true -f 1 -a false | cut -d' ' -f2,8-",
+        "exec": "ansiweather | cut -d' ' -f2,8-",
         "exec-if": "ping openweathermap.org -c1",
         "tooltip": "false"
     }

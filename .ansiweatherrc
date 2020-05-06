@@ -2,11 +2,11 @@
 
 api_key:85a4e3c55b73909f42c6a23ec35b7147
 fetch_cmd:curl -sf
-location:Rzeszow,PL
+location:Freiburg,DE
 units:metric
 forecast:0
-ansi:true
-symbols:false
+ansi:false
+symbols:true
 show_uvi:true
 show_wind:true
 show_humidity:true
@@ -33,7 +33,7 @@ wind_text:Wind
 # Icons
 sun:\033[33;1m\xe2\x98\x80
 moon:\033[36m\xe2\x98\xbd
-clouds:\033[37;1m\xe2\x98\x81
+clouds: #\033[37;1m\xe2\x98\x81
 rain:\033[37;1m\xe2\x98\x94
 fog:\033[37;1m\xe2\x96\x92
 mist:\033[34m\xe2\x96\x91
