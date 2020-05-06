@@ -3,7 +3,7 @@
 
 (package! org-ref)
 (package! darkroom)
-(package! writeroom-mode)
+(package! vdiff)
 
 ;;; Examples:
 ;; (package! some-package)
