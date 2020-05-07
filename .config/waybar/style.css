@@ -77,6 +77,7 @@ window#waybar.chromium {
 #pulseaudio,
 #custom-media,
 #custom-weather,
+#custom-wofi,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -85,6 +86,10 @@ window#waybar.chromium {
     margin: 0 2px;
     color: #ffffff;
     background-color: transparent;
+}
+
+#custom-wofi {
+    color: #1793d1;
 }
 
 #clock {
