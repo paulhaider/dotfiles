@@ -3,14 +3,17 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: NotoSans, NotoSansMono Nerd Font;
-    font-size: 16px;
+    font-size: 17px;
     min-height: 0;
 }
 
 window#waybar {
+    /*background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 2px solid rgba(100, 114, 125, 0.5);
+    background-color: #30323a;
+    border-bottom: 2px solid #30323a; */
     background-color: transparent;
-    /* background-color: rgba(43, 48, 59, 0.5); */
-    /* border-bottom: 2px solid rgba(100, 114, 125, 0.5); */
+    border-bottom: 2px solid transparent;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -54,8 +57,16 @@ window#waybar.chromium {
 }
 
 #workspaces button.focused {
-    /* background-color: #64727D; */
-    border-bottom: 2px solid #ffffff;
+    /* border-top: 2px solid #d38aea;
+    color: #d38aea;
+    border-top: 2px solid #f1c40f;
+    color: #f1c40f;
+    border-top: 2px solid #bf75d6;
+    color: #bf75d6;
+    border-top: 2px solid #ff7f00;
+    color: #ff7f00; */
+    border-top: 2px solid #ffa000;
+    color: #ffa000;
 }
 
 #workspaces button.urgent {
@@ -171,7 +182,8 @@ label:focus {
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
+    background-color: transparent;
+    color: #ffa000;
 }
 
 #temperature {
