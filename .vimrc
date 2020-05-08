@@ -24,6 +24,12 @@ filetype indent on " load filetype-specific indent files
 autocmd BufNewFile,BufRead *.wl set syntax=mma
 autocmd BufNewFile,BufRead *.mod set syntax=mma
 
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+  au BufNewFile,BufRead ~/.config/sway/config set filetype=i3config
+aug end
+
 " colorscheme configuration
 set termguicolors
 set background=dark
