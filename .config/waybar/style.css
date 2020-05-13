@@ -99,10 +99,6 @@ window#waybar.chromium {
     background-color: transparent;
 }
 
-#custom-wofi {
-    color: #1793d1;
-}
-
 #clock {
     /* background-color: #64727D; */
 }
