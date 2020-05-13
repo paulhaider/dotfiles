@@ -315,7 +315,7 @@ bindsym $mod+z mode "resize"
 # set gtk-theme, icon-theme and cursor-theme for gtk programs
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adapta-Blue-Nokto-Eta'
+    gsettings set $gnome-schema gtk-theme 'Adapta-DeepPurple-Nokto-Eta'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'xcursor-breeze-snow'
 }
@@ -338,6 +338,15 @@ bindsym $mod+w mode "$mode_swaymgr"
 exec nm-applet --indicator
 exec blueman-applet
 exec redshift-gtk
+
+# load Xresources
+exec xrdb ~/.Xresources
+
+# show message when battery is discharging
+exec swaynag-battery
+
+# activate gestures
+exec libinput-gestures-setup start
 
 #
 # Color settings
