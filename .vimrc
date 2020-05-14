@@ -79,7 +79,7 @@ set listchars=tab:▸\ ,eol:↩,trail:⋅,extends:❯,precedes:❮
 " Plugin specific configuration
 
 " airline configuration
-set laststatus=2 "show airline all the time
+set laststatus=2 " show airline all the time
 let g:airline_theme='edge'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
@@ -125,7 +125,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0 " weird output at start in vim if set to 1
 let g:syntastic_check_on_wq = 0
 
 " Vimtex
