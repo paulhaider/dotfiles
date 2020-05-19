@@ -74,22 +74,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
-# antigen theme refined
-# antigen theme Huvik/Cloudy
-# antigen theme lambda
-# antigen theme suvash
-# antigen theme half-life
-# antigen theme fwalch
-# antigen theme wezm
-# antigen theme awesomepanda
-# antigen theme avit
 antigen theme halfo/lambda-mod-zsh-theme
-
-# External themes
-# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
 # Tell antigen that you're done.
 antigen apply
-
-# Promptline
-# source ~/.shell_prompt.sh
