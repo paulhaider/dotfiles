@@ -46,6 +46,9 @@ endif
 " change working directory to current file
 " set autochdir
 
+" use space as leader key
+let mapleader = ' '
+
 " clipboard only works if compiled with that option
 set clipboard=unnamedplus " access system clipboard
 set mouse=a " mouse scrolling
