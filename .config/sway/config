@@ -69,8 +69,8 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
     # Configure border style <normal|1pixel|pixel xx|none|pixel>
-    default_border pixel 1
-    default_floating_border pixel 1
+    default_border pixel 2
+    default_floating_border pixel 2
     floating_minimum_size 75 x 50
     floating_maximum_size 1870 x 1000
 
@@ -79,7 +79,7 @@ exec swayidle -w \
 
     # change borders
     bindsym $mod+udiaeresis border none
-    bindsym $mod+odiaeresis border pixel 1
+    bindsym $mod+odiaeresis border pixel 2
     bindsym $mod+adiaeresis border normal
 
 ### Key bindings
@@ -355,7 +355,7 @@ exec libinput-gestures-setup start
 include colorscheme
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base0D $base00 $base05 $base0D   $base0D
+client.focused          $base0E $base00 $base05 $base0E   $base0E
 client.focused_inactive $base01 $base01 $base05 $base03   $base01
 client.unfocused        $base01 $base00 $base05 $base01   $base01
 client.urgent           $base08 $base08 $base00 $base08   $base08
@@ -377,7 +377,7 @@ bar {
 # Gaps
 #
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 8
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
