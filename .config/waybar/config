@@ -158,6 +158,6 @@
         "format": "{}",
         "interval": 3600,
         // "exec": "$HOME/.config/waybar/weather.sh",
-        "exec": "ansiweather -f 1 | cut -d' ' -f8-"
+        "exec": "ansiweather -f 1 | cut -d' ' -f7-"
     }
 }
