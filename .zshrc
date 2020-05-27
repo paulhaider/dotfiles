@@ -24,6 +24,11 @@ export LT=$HOME/Software/LoopTools/x86_64-Linux
 # alias emax='emacsclient -t'
 # alias xmax='emacsclient -c'
 
+# PATH configuration
+# add Doom folder to path
+path+=$HOME/.emacs.d/bin
+export PATH
+
 #aliases
 alias emacs='emacs -nw'
 alias tmux='tmux -2'
