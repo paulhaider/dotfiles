@@ -18,7 +18,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu wofi --show drun -i --allow-images -W 500 -H 400
-for_window [class="URxvt" instance="launcher"] floating enable, border pixel 1, sticky enable
+for_window [class="URxvt" instance="launcher"] floating enable, border pixel 2, sticky enable
 set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="urxvt -e" sway-launcher-desktop
 # set $dmenu j4-dmenu-desktop --dmenu="bemenu -ib" --no-generic --term=kitty
 
