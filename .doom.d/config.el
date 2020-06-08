@@ -16,7 +16,10 @@
 (doom-themes-org-config)
 
 ;; Load the font
-(setq doom-font (font-spec :family "Fira Code" :size 16))
+(setq doom-font (font-spec :family "Fira Code" :size 15))
+
+;; Doom modeline
+(setq doom-modeline-major-mode-icon t)
 
 ;; useful tools for getting bibtex entries and pdf files of journal manuscripts
 (require 'doi-utils)
