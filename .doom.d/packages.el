@@ -2,6 +2,8 @@
 ;;; ~/.doom.d/packages.el
 
 (package! org-ref)
+(package! org-roam-bibtex)
+(package! ivy-bibtex)
 (package! darkroom)
 (package! vdiff)
 
