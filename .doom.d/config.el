@@ -56,10 +56,73 @@
 (setq org-latex-listings t)
 (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
 
+(setq org_notes (concat (getenv "HOME") "/org/")
+      zot_bib (concat (getenv "HOME") "/org/zotLib.bib")
+      org-directory org_notes)
+
 (use-package deft
-      :after org
-      :custom
-      (deft-recursive t) ; search subdirectories
-      (deft-use-filter-string-for-filename t)
-      (deft-default-extension "org")
-      (deft-directory "~/org/"))
+  :after org
+  :custom
+  (deft-recursive t) ; search subdirectories
+  (deft-directory org_notes))
+
+(use-package! org-roam
+  :commands (org-roam-insert org-roam-find-file org-roam)
+  :init
+  (setq org-roam-directory "~/org/")
+  ;; (setq org-roam-graph-viewer "/usr/bin/open")
+  :config
+  (org-roam-mode +1))
+
+(setq
+  bibtex-completion-notes-path org_notes
+  bibtex-completion-bibliography zot_bib
+  bibtex-completion-pdf-field "file"
+  bibtex-completion-notes-template-multiple-files
+  (concat
+   "#+TITLE: ${title}\n"
+   "#+ROAM_KEY: cite:${=key=}\n"
+   "* TODO Notes\n"
+   ":PROPERTIES:\n"
+   ":Custom_ID: ${=key=}\n"
+   ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"
+   ":AUTHOR: ${author-abbrev}\n"
+   ":JOURNAL: ${journaltitle}\n"
+   ":DATE: ${date}\n"
+   ":YEAR: ${year}\n"
+   ":DOI: ${doi}\n"
+   ":URL: ${url}\n"
+   ":END:\n\n"
+   )
+  )
+
+(use-package org-ref
+  :config
+  (setq
+   org-ref-completion-library 'org-ref-ivy-cite
+   org-ref-get-pdf-filename-function 'org-ref-get-pdf-filename-helm-bibtex
+   org-ref-default-bibliography (list zot_bib)
+   org-ref-bibliography-notes "~/org/bibnotes.org"
+   org-ref-note-title-format "* TODO %y - %t\n :PROPERTIES:\n  :Custom_ID: %k\n  :NOTER_DOCUMENT: %F\n :ROAM_KEY: cite:%k\n  :AUTHOR: %9a\n  :JOURNAL: %j\n  :YEAR: %y\n  :VOLUME: %v\n  :PAGES: %p\n  :DOI: %D\n  :URL: %U\n :END:\n\n"
+   org-ref-notes-directory org_notes
+   org-ref-notes-function 'orb-edit-notes
+   ))
+
+(use-package org-roam-bibtex
+  :after (org-roam)
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :config
+  (setq org-roam-bibtex-preformat-keywords
+        '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
+  (setq orb-templates
+        '(("r" "ref" plain (function org-roam-capture--get-point)
+           ""
+           :file-name "${slug}"
+           :head "#+TITLE: ${=key=}: ${title}\n#+ROAM_KEY: ${ref}
+
+- tags ::
+- keywords :: ${keywords}
+
+\n* ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :URL: ${url}\n  :AUTHOR: ${author-or-editor}\n  :NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n  :NOTER_PAGE: \n  :END:\n\n"
+
+           :unnarrowed t))))
