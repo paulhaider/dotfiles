@@ -2,6 +2,15 @@
 
 ;; Place your private configuration here
 
+;; Personal Information
+(setq user-full-name "Paul Haider"
+      user-mail-address "paul.haider@pm.me")
+
+;; Load the font
+(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 15))
+(setq doom-unicode-font (font-spec :name "DejaVu Sans Mono" :size 15))
+
+;; Load the theme
 (require 'doom-themes)
 
 ;; Global settings (defaults)
@@ -10,13 +19,11 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
-;; Load the font
-(setq doom-font (font-spec :family "Fira Code" :size 15))
 
 ;; Doom modeline
 (setq doom-modeline-major-mode-icon t)
@@ -56,47 +63,28 @@
 (setq org-latex-listings t)
 (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
 
-(setq org_notes (concat (getenv "HOME") "/org/")
+;; Variables
+(setq org_notes (concat (getenv "HOME") "/org/notes/")
       zot_bib (concat (getenv "HOME") "/org/zotLib.bib")
-      org-directory org_notes)
+      org_directory (concat (getenv "HOME") "/org/")
+      org-directory org_directory)
 
 (use-package deft
   :after org
   :custom
   (deft-recursive t) ; search subdirectories
-  (deft-directory org_notes))
+  (deft-directory org_directory))
 
 (use-package! org-roam
   :commands (org-roam-insert org-roam-find-file org-roam)
   :init
-  (setq org-roam-directory "~/org/")
-  ;; (setq org-roam-graph-viewer "/usr/bin/open")
+  (setq org-roam-directory org_notes)
   :config
   (org-roam-mode +1))
 
-(setq
-  bibtex-completion-notes-path org_notes
-  bibtex-completion-bibliography zot_bib
-  bibtex-completion-pdf-field "file"
-  bibtex-completion-notes-template-multiple-files
-  (concat
-   "#+TITLE: ${title}\n"
-   "#+ROAM_KEY: cite:${=key=}\n"
-   "* TODO Notes\n"
-   ":PROPERTIES:\n"
-   ":Custom_ID: ${=key=}\n"
-   ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"
-   ":AUTHOR: ${author-abbrev}\n"
-   ":JOURNAL: ${journaltitle}\n"
-   ":DATE: ${date}\n"
-   ":YEAR: ${year}\n"
-   ":DOI: ${doi}\n"
-   ":URL: ${url}\n"
-   ":END:\n\n"
-   )
-  )
-
-(use-package org-ref
+(use-package! org-ref
+  ;; :init
+  ;; code to run before loading org-ref
   :config
   (setq
    org-ref-completion-library 'org-ref-ivy-cite
@@ -107,6 +95,31 @@
    org-ref-notes-directory org_notes
    org-ref-notes-function 'orb-edit-notes
    ))
+
+(after! org-ref
+  (setq
+   bibtex-completion-notes-path org_notes
+   bibtex-completion-bibliography zot_bib
+   bibtex-completion-pdf-field "file"
+   bibtex-completion-notes-template-multiple-files
+   (concat
+    "#+TITLE: ${title}\n"
+    "#+ROAM_KEY: cite:${=key=}\n"
+    "#+ROAM_TAGS: ${keywords}\n"
+    "* TODO Notes\n"
+    ":PROPERTIES:\n"
+    ":Custom_ID: ${=key=}\n"
+    ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"
+    ":AUTHOR: ${author-abbrev}\n"
+    ":JOURNAL: ${journaltitle}\n"
+    ":DATE: ${date}\n"
+    ":YEAR: ${year}\n"
+    ":DOI: ${doi}\n"
+    ":URL: ${url}\n"
+    ":END:\n\n"
+    )
+   )
+  )
 
 (use-package org-roam-bibtex
   :after (org-roam)
