@@ -6,16 +6,20 @@
 (setq user-full-name "Paul Haider"
       user-mail-address "paul.haider@pm.me")
 
-;; Load the font
-(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 15))
-(setq doom-unicode-font (font-spec :name "DejaVu Sans Mono" :size 15))
-
 ;; Load the theme
 (require 'doom-themes)
 
 ;; Global settings (defaults)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+;; Load the font
+(setq doom-font (font-spec :name "FuraCode Nerd Font" :size 15)
+      doom-unicode-font (font-spec :name "Noto Sans Mono" :size 15)
+      math-font (font-spec :family "Noto Sans Mono" :size 15))
+;; (setq doom-font (font-spec :family "TT2020 Style E" :size 20))
+;; (setq doom-font (font-spec :family "Iosevka" :size 15))
+
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
