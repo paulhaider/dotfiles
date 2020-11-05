@@ -15,15 +15,6 @@ fi
 # but still use emacs mode for ZLE (Zsh Line Editor)
 bindkey -e
 
-# set variables for FeynArts, FeynCalc and LoopTools
-export LT=$HOME/Software/LoopTools/x86_64-Linux
-
-# emacs as daemon
-# export ALTERNATE_EDITOR=""
-# export EDITOR="emacsclient -t"
-# alias emax='emacsclient -t'
-# alias xmax='emacsclient -c'
-
 # PATH configuration
 # add Doom folder to path
 path+=$HOME/.emacs.d/bin
@@ -33,13 +24,9 @@ export PATH
 alias emacs='emacs -nw'
 alias tmux='tmux -2'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ol='$HOME/Software/OpenLoops/build/src/openloops'
-
-# configure using GNU compilers
-alias gconfwrap='FC=gfortran CC=gcc CXX=g++ ./configure --generic'
 
 # thefuck
-# eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 # make home and end keys work inside zsh
 # bindkey "${terminfo[khome]}" beginning-of-line
@@ -55,9 +42,6 @@ KEYTIMEOUT=1
 
 # set 256 colors if not in tmux
 # [[ $TMUX = "" ]] && export TERM="xterm-256color"
-
-# gopass autocompletion
-# source <(gopass completion zsh)
 
 # zsh edge theme
 source ~/.vim/plugged/edge/zsh/.zsh-theme-edge-dark
