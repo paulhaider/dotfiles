@@ -6,3 +6,8 @@ profile {
        output eDP-1 disable
        output DP-1 mode 2560x1440@59.951000Hz position 0,0
 }
+
+profile {
+       output eDP-1 disable
+       output HDMI-A-2 mode 3840x2160@30.000000Hz position 0,0 scale 1.5
+}
