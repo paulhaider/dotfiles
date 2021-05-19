@@ -23,7 +23,7 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one-light t)
+(load-theme 'doom-one t)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
@@ -45,6 +45,7 @@
 
 ;; Latex specific configuartion for Org mode
 (require 'ox-latex)
+(setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
 (unless (boundp 'org-latex-classes)
   (setq org-latex-classes nil))
 (add-to-list 'org-latex-classes
@@ -71,7 +72,7 @@
 (setq org_notes (concat (getenv "HOME") "/org/notes/")
       zot_bib (concat (getenv "HOME") "/org/zotLib.bib")
       org_directory (concat (getenv "HOME") "/org/")
-      org-directory org_directory)
+      org-agenda-files (list org-directory))
 
 (use-package deft
   :after org
