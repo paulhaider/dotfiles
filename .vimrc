@@ -3,17 +3,16 @@ set nocompatible " not compatible with vi but make vim behave in a more useful w
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'sainnhe/edge'
 Plug 'edkolev/tmuxline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
-Plug 'vim-syntastic/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mboughaba/i3config.vim'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 call plug#end() " required
 " Put your non-Plugin stuff after this line
@@ -34,8 +33,9 @@ aug end
 " colorscheme configuration
 set termguicolors
 set background=dark
+
 " the configuration options should be placed before `colorscheme edge`
-let g:edge_style = 'default'
+let g:edge_style = 'aura'
 let g:edge_disable_italic_comment = 0
 colorscheme edge
 
@@ -96,6 +96,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#fnametruncate = 16
 let g:airline#extensions#tabline#fnamecollapse = 2
+let g:airline#extensions#keymap#enabled = 0
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -121,16 +122,6 @@ let g:gitgutter_sign_modified='┃'
 let g:gitgutter_sign_removed='◢'
 let g:gitgutter_sign_removed_first_line='◥'
 let g:gitgutter_sign_modified_removed='◢'
-
-" Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0 " weird output at start in vim if set to 1
-let g:syntastic_check_on_wq = 0
 
 " Vimtex
 let g:tex_flavor='latex'
