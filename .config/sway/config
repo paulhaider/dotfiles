@@ -23,11 +23,12 @@ set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="ur
 # set $dmenu j4-dmenu-desktop --dmenu="bemenu -ib" --no-generic --term=kitty
 
 ### Output configuration
-#
-output eDP-1 res 1920x1080 pos 0,0
-output HDMI-A-2 mode 1920x1080@50Hz pos 1920,0
+# atm kanshi is used for output configuration
+# output DP-1 mode 2560x1440@59.951000Hz pos 0,0
+# output eDP-1 res 1920x1080 pos 2560,0
+# output HDMI-A-2 mode 1920x1080@50Hz pos 1920,0
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan.jpg fill
+output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan-original.jpg fill
 #
 # Example configuration:
 #
@@ -40,8 +41,8 @@ output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan.jpg fill
 exec swayidle -w \
        timeout 300 'swaylock-blur' \
        timeout 600 'swaymsg "output * dpms off"' \
-       resume 'swaymsg "output * dpms on"' \
-       before-sleep 'swaylock-blur'
+            resume 'swaymsg "output * dpms on"' \
+       before-sleep 'swaylock-blur' \
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -87,9 +88,9 @@ exec swayidle -w \
 # Bound keys denoted by captial letters
 # Unbound keys denoted by small letters
 #
-# XVLCwKHgFQß
-# UIAEoSNRTDy
-#  ÜÖÄpZBM,.j
+# XVLCWkHGFQß
+# UIAEOSNRTDy
+#  ÜÖÄPZBM,.j
 #
 # Basics:
 #
@@ -227,6 +228,8 @@ exec swayidle -w \
     # navigate workspaces next / previous
     bindsym $mod+Ctrl+Right workspace next
     bindsym $mod+Ctrl+Left workspace prev
+    bindsym $mod+o workspace next
+    bindsym $mod+p workspace prev
 
 #
 # Special keys:
@@ -257,7 +260,7 @@ exec swayidle -w \
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+k layout stacking
+    bindsym $mod+g layout stacking
     bindsym $mod+t layout tabbed
     bindsym $mod+r layout toggle split
 
@@ -372,6 +375,9 @@ bar {
     # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
     swaybar_command waybar
 }
+
+# start kanshi for dynamic output configuration
+exec kanshi
 
 #
 # Gaps
