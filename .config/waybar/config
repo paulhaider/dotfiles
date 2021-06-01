@@ -154,10 +154,17 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+    // "custom/weather": {
+    //     "format": "{}",
+    //     "interval": 3600,
+    //     // "exec": "$HOME/.config/waybar/weather.sh",
+    //     "exec": "ansiweather -f 1 | cut -d' ' -f2,7-"
+    // }
     "custom/weather": {
-        "format": "{}",
-        "interval": 3600,
-        // "exec": "$HOME/.config/waybar/weather.sh",
-        "exec": "ansiweather -f 1 | cut -d' ' -f2,7-"
+      "format": "{}",
+      "tooltip": true,
+      "interval": 3600,
+      "exec": "$HOME/.config/waybar/waybar-wttr.py",
+      "return-type": "json"
     }
 }
