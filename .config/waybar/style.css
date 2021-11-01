@@ -166,9 +166,9 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+    background-color: transparent;
+    color: #ff8800;
+    border-bottom: 2px solid transparent;
 }
 
 #custom-media.custom-spotify {

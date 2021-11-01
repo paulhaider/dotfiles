@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/weather", "idle_inhibitor", "backlight", "pulseaudio", "battery", "tray", "clock"],
+    "modules-right": ["custom/aare", "custom/weather", "idle_inhibitor", "backlight", "pulseaudio", "battery", "tray", "clock"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -160,6 +160,13 @@
     //     // "exec": "$HOME/.config/waybar/weather.sh",
     //     "exec": "ansiweather -f 1 | cut -d' ' -f2,7-"
     // }
+    "custom/aare": {
+      "format": "{}",
+      "tooltip": true,
+      "interval": 3600,
+      "exec": "$HOME/.config/waybar/aare.py",
+      "return-type": "json"
+    },
     "custom/weather": {
       "format": "{}",
       "tooltip": true,
