@@ -1,11 +1,13 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; ~/.doom.d/packages.el
 
-(package! org-ref)
-(package! org-roam-bibtex)
-(package! ivy-bibtex)
-(package! darkroom)
 (package! vdiff)
+(package! helm-bibtex)
+(package! org-roam-bibtex
+  :recipe (:host github :repo "org-roam/org-roam-bibtex"))
+
+;; When using org-roam via the `+roam` flag
+(unpin! org-roam)
 
 ;;; Examples:
 ;; (package! some-package)
