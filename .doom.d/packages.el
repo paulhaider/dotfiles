@@ -2,7 +2,6 @@
 ;;; ~/.doom.d/packages.el
 
 (package! vdiff)
-(package! helm-bibtex)
 (package! org-roam-bibtex
   :recipe (:host github :repo "org-roam/org-roam-bibtex"))
 
