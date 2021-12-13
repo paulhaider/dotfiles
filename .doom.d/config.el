@@ -95,7 +95,9 @@
 (setq zot_bib (concat (getenv "HOME") "/org/zotLib.bib")
       org_directory (concat (getenv "HOME") "/org/")
       org_notes (list org_directory)
-      org-agenda-files (list org_directory))
+      org_journal (concat (getenv "HOME") "/org/journal/") ; for some reason I do not understand agenda view only works when I name the folder daily
+      org-directory org_directory
+      org-agenda-files (list org_directory org_journal))
 
 ;; bibtex completion (replacing some older org-ref variables)
 (setq bibtex-completion-bibliography zot_bib
@@ -114,20 +116,23 @@
       (lambda (fpath)
         (call-process "open" nil 0 nil fpath)))
 
-(setq org-journal-file-type 'daily
-      org-journal-enable-agenda-integration t)  ; show current journal todos in agenda
+;; change org journal to use .org ending and perfixes as for roam dailies
+(setq org-journal-dir org_journal
+      org-journal-file-type 'daily
+      org-journal-file-format "%Y%m%d.org"
+      org-journal-date-format "%A, %x"
+      org-journal-date-prefix "#+title: "
+      org-journal-time-prefix "* "
+      org-journal-carryover-delete-empty-journal 'ask
+      org-journal-enable-agenda-integration nil)  ; show current journal todos in agenda
 
-;; link click on ref to ivy
-(setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
-      org-ref-insert-cite-function 'org-ref-cite-insert-ivy
-      org-ref-insert-label-function 'org-ref-insert-label-link
-      org-ref-insert-ref-function 'org-ref-insert-ref-link
-      org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
-
-(use-package! org-roam
-  :init
-  (setq org-roam-directory org_directory)
-  )
+(setq org-roam-directory org_directory
+      org-roam-dailies-directory org_journal
+      org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         "* %?"
+         :target (file+head "%<%Y%m%d>.org"
+                            "#+title: %<%A, %x>\n"))))
 
 (use-package org-roam-bibtex
   :after org-roam
