@@ -52,45 +52,44 @@
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
-
 ;; Doom modeline
 (setq doom-modeline-major-mode-icon t)
 
-;; useful tools for getting bibtex entries and pdf files of journal manuscripts
-(require 'doi-utils)
-(require 'org-ref-arxiv)
-(setq bibtex-dialect 'biblatex)
+;; ;; useful tools for getting bibtex entries and pdf files of journal manuscripts
+;; (require 'doi-utils)
+;; (require 'org-ref-arxiv)
+;; (setq bibtex-dialect 'biblatex)
+;;
+;; (require 'org)
+;; (setq org-list-allow-alphabetical t)
+;;
+;; (require 'projectile)
+;; (setq projectile-enable-caching t)
 
-(require 'org)
-(setq org-list-allow-alphabetical t)
-
-(require 'projectile)
-(setq projectile-enable-caching t)
-
-;; Latex specific configuartion for Org mode
-(require 'ox-latex)
-(setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
-(unless (boundp 'org-latex-classes)
-  (setq org-latex-classes nil))
-(add-to-list 'org-latex-classes
-             '("mimosis"
-               "\\documentclass{mimosis}"
-               ("\\part{%s}" . "\\part*{%s}")
-               ("\\chapter{%s}" . "\\chapter*{%s}")
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
-(add-to-list 'org-latex-classes
-             '("mimosis_nopart"
-               "\\documentclass{mimosis}"
-               ("\\chapter{%s}" . "\\chapter*{%s}")
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
-(setq org-latex-listings t)
-(add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
+;; ;; Latex specific configuartion for Org mode
+;; (require 'ox-latex)
+;; (setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
+;; (unless (boundp 'org-latex-classes)
+;;   (setq org-latex-classes nil))
+;; (add-to-list 'org-latex-classes
+;;              '("mimosis"
+;;                "\\documentclass{mimosis}"
+;;                ("\\part{%s}" . "\\part*{%s}")
+;;                ("\\chapter{%s}" . "\\chapter*{%s}")
+;;                ("\\section{%s}" . "\\section*{%s}")
+;;                ("\\subsection{%s}" . "\\subsection*{%s}")
+;;                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;;                ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
+;; (add-to-list 'org-latex-classes
+;;              '("mimosis_nopart"
+;;                "\\documentclass{mimosis}"
+;;                ("\\chapter{%s}" . "\\chapter*{%s}")
+;;                ("\\section{%s}" . "\\section*{%s}")
+;;                ("\\subsection{%s}" . "\\subsection*{%s}")
+;;                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;;                ("\\subsubsubsection{%s}" . "\\subsubsubsection*{%s}")))
+;; (setq org-latex-listings t)
+;; (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
 
 ;; Variables
 (setq zot_bib (concat (getenv "HOME") "/org/zotLib.bib")
