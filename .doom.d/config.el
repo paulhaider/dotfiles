@@ -139,17 +139,25 @@
   :hook (org-roam-mode . org-roam-bibtex-mode)
   :config
   (require 'org-ref)
-  (setq org-roam-bibtex-preformat-keywords
-        '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
-  (setq orb-templates
-        '(("r" "ref" plain (function org-roam-capture--get-point)
-           ""
-           :file-name "${slug}"
-           :head "#+TITLE: ${=key=}: ${title}\n#+ROAM_KEY: ${ref}
 
-- tags ::
-- keywords :: ${keywords}
+  ;; link click on ref to ivy
+  (setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
+        org-ref-insert-cite-function 'org-ref-cite-insert-ivy
+        org-ref-insert-label-function 'org-ref-insert-label-link
+        org-ref-insert-ref-function 'org-ref-insert-ref-link
+        org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
-\n* ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :URL: ${url}\n  :AUTHOR: ${author-or-editor}\n  :NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n  :NOTER_PAGE: \n  :END:\n\n"
+  (setq orb-preformat-keywords
+        '("citekey" "title" "url" "author-or-editor" "keywords" "file")
+        orb-process-file-keyword t
+        orb-file-field-extensions '("pdf"))
 
-           :unnarrowed t))))
+  (setq org-roam-capture-templates
+        '(("d" "default" plain "%?"
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+title: ${title}\n")
+           :unnarrowed t)
+          ("r" "bibliography reference" plain
+           (file "/home/paul/Templates/noter_template.org")
+           :target
+           (file+head "references/${citekey}.org" "#+title: ${title}\n")))))
