@@ -25,6 +25,30 @@
 ;; may have their own settings.
 (load-theme 'doom-one t)
 
+;; map arrow keys for window navigation
+(map! :map evil-window-map
+      :desc "Window up" "<up>" #'evil-window-up
+      :desc "Window down" "<down>" #'evil-window-down
+      :desc "Window left" "<left>" #'evil-window-left
+      :desc "Window right" "<right>" #'evil-window-right
+      :desc "Window up" "S-<up>" #'+evil/window-move-up
+      :desc "Window down" "S-<down>" #'+evil/window-move-down
+      :desc "Window left" "S-<left>" #'+evil/window-move-left
+      :desc "Window right" "S-<right>" #'+evil/window-move-right
+      "C-k" nil
+      "C-j" nil
+      "C-h" nil
+      "C-l" nil
+      "C-S-k" nil
+      "C-S-j" nil
+      "C-S-h" nil
+      "C-S-l" nil)
+
+(map! :leader
+      (:prefix-map ("m" . "+<localleader>")
+       (:prefix-map ("m" . "+org_roam")
+        :desc "Insert org-ref citation" "c" #'org-ref-insert-cite-link)))
+
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
