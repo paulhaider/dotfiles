@@ -44,28 +44,12 @@
       "C-S-h" nil
       "C-S-l" nil)
 
-(map! :leader
-      (:prefix-map ("m" . "+<localleader>")
-       (:prefix-map ("m" . "+org_roam")
-        :desc "Insert org-ref citation" "c" #'org-ref-insert-cite-link)))
-
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
 ;; Doom modeline
 (setq doom-modeline-major-mode-icon t)
-
-;; ;; useful tools for getting bibtex entries and pdf files of journal manuscripts
-;; (require 'doi-utils)
-;; (require 'org-ref-arxiv)
-;; (setq bibtex-dialect 'biblatex)
 ;;
-;; (require 'org)
-;; (setq org-list-allow-alphabetical t)
-;;
-;; (require 'projectile)
-;; (setq projectile-enable-caching t)
-
 ;; ;; Latex specific configuartion for Org mode
 ;; (require 'ox-latex)
 ;; (setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
@@ -99,22 +83,12 @@
       org-directory org_directory
       org-agenda-files (list org_directory org_journal))
 
-;; bibtex completion (replacing some older org-ref variables)
-(setq bibtex-completion-bibliography zot_bib
-      bibtex-completion-pdf-field "file"  ; in order to find pdfs in Zotero bibliography
-      bibtex-completion-notes-path (concat (getenv "HOME") "/org/notes/")  ; not sure what that's needed for atm
-      bibtex-completion-notes-template-multiple-files "* ${author-or-editor}, ${title}, ${journal}, (${year}) :${=type=}: \n\nSee [[cite:&${=key=}]]\n"
-
-      bibtex-completion-additional-search-fields '(keywords)
-      bibtex-completion-display-formats
-      '((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")
-        (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
-        (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
-        (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
-        (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))
-      bibtex-completion-pdf-open-function
-      (lambda (fpath)
-        (call-process "open" nil 0 nil fpath)))
+(setq! citar-bibliography '("~/org/zotLib.bib"))
+(setq! citar-symbols
+      `((file ,(all-the-icons-faicon "file-o" :face 'all-the-icons-green :v-adjust -0.1) . " ")
+        (note ,(all-the-icons-material "speaker_notes" :face 'all-the-icons-blue :v-adjust -0.3) . " ")
+        (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
+(setq! citar-symbol-separator "  ")
 
 ;; change org journal to use .org ending and perfixes as for roam dailies
 (setq org-journal-dir org_journal
@@ -138,14 +112,6 @@
   :after org-roam
   :hook (org-roam-mode . org-roam-bibtex-mode)
   :config
-  (require 'org-ref)
-
-  ;; link click on ref to ivy
-  (setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
-        org-ref-insert-cite-function 'org-ref-cite-insert-ivy
-        org-ref-insert-label-function 'org-ref-insert-label-link
-        org-ref-insert-ref-function 'org-ref-insert-ref-link
-        org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
 
   (setq orb-preformat-keywords
         '("citekey" "title" "url" "author-or-editor" "keywords" "file")
