@@ -76,19 +76,24 @@
 ;; (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
 
 ;; Variables
-(setq zot_bib (concat (getenv "HOME") "/org/zotLib.bib")
-      org_directory (concat (getenv "HOME") "/org/")
+(setq zot_bib (concat (getenv "HOME") "/braindump/zotLib.bib")
+      org_directory (concat (getenv "HOME") "/braindump/")
       org_notes (list org_directory)
-      org_journal (concat (getenv "HOME") "/org/journal/") ; for some reason I do not understand agenda view only works when I name the folder daily
+      org_journal (concat (getenv "HOME") "/braindump/journal/") ; for some reason I do not understand agenda view only works when I name the folder daily
       org-directory org_directory
       org-agenda-files (list org_directory org_journal))
 
-(setq! citar-bibliography '("~/org/zotLib.bib"))
+(setq! citar-bibliography '("~/braindump/zotLib.bib"))
+(setq! citar-notes-paths '("~/braindump/notes/"))
 (setq! citar-symbols
       `((file ,(all-the-icons-faicon "file-o" :face 'all-the-icons-green :v-adjust -0.1) . " ")
         (note ,(all-the-icons-material "speaker_notes" :face 'all-the-icons-blue :v-adjust -0.3) . " ")
         (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
 (setq! citar-symbol-separator "  ")
+
+;; not sure if the following is necessary but sometimes bibtex-completion was complaining (when trying to create a new note for a reference)
+(setq! bibtex-completion-bibliography citar-bibliography)
+(setq! bibtex-completion-notes-path citar-notes-paths)
 
 ;; change org journal to use .org ending and perfixes as for roam dailies
 (setq org-journal-dir org_journal
@@ -126,4 +131,4 @@
           ("r" "bibliography reference" plain
            (file "/home/paul/Templates/noter_template.org")
            :target
-           (file+head "references/${citekey}.org" "#+title: ${title}\n")))))
+           (file+head "notes/${citekey}.org" "#+title: ${title}\n")))))
