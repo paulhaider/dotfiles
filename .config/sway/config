@@ -28,7 +28,8 @@ set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="ur
 # output eDP-1 res 1920x1080 pos 2560,0
 # output HDMI-A-2 mode 1920x1080@50Hz pos 1920,0
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan-original.jpg fill
+# output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan-original.jpg fill
+output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-venice.jpg fill
 #
 # Example configuration:
 #
@@ -39,9 +40,9 @@ output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan-original.jpg 
 ### Idle configuration
 #
 exec swayidle -w \
-         timeout 300 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2' \
+         timeout 300 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --grace 2 --fade-in 0.2' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2'
+         before-sleep 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --grace 2 --fade-in 0.2'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -118,7 +119,7 @@ exec swayidle -w \
     bindsym $mod+c exec wl-gammactl
 
     # lock screen
-    bindsym $mod+Shift+k exec swaylock-blur
+    bindsym $mod+Shift+k exec swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --grace 2 --fade-in 0.2
 
     # exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -229,6 +230,8 @@ exec swayidle -w \
     bindsym $mod+Ctrl+Left workspace prev
     bindsym $mod+o workspace next
     bindsym $mod+p workspace prev
+    bindsym $mod+Tab workspace next
+    bindsym $mod+Shift+Tab workspace prev
 
 #
 # Special keys:
@@ -376,7 +379,7 @@ bar {
 }
 
 # start kanshi for dynamic output configuration
-exec kanshi
+# exec kanshi
 
 #
 # Gaps
