@@ -91,10 +91,6 @@
         (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
 (setq! citar-symbol-separator "  ")
 
-;; not sure if the following is necessary but sometimes bibtex-completion was complaining (when trying to create a new note for a reference)
-(setq! bibtex-completion-bibliography citar-bibliography)
-(setq! bibtex-completion-notes-path citar-notes-paths)
-
 ;; change org journal to use .org ending and perfixes as for roam dailies
 (setq org-journal-dir org_journal
       org-journal-file-type 'daily
