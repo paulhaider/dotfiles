@@ -14,16 +14,12 @@
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
 ;; Load the font
-(setq doom-font (font-spec :name "FuraCode Nerd Font" :size 15)
-      doom-unicode-font (font-spec :name "Noto Sans Mono" :size 15)
-      math-font (font-spec :family "Noto Sans Mono" :size 15))
-;; (setq doom-font (font-spec :family "TT2020 Style E" :size 20))
-;; (setq doom-font (font-spec :family "Iosevka" :size 15))
-
+(setq doom-font (font-spec :family "Fira Code" :size 14 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 15))
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one t)
+(load-theme 'doom-ayu-light t)
 
 ;; map arrow keys for window navigation
 (map! :map evil-window-map
