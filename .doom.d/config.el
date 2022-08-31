@@ -43,6 +43,10 @@
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
+;; enable org-modern-mode
+(add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
 ;; Doom modeline
 (setq doom-modeline-major-mode-icon t)
 ;;

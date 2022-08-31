@@ -1,9 +1,8 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; ~/.doom.d/packages.el
 
-(package! vdiff)
-(package! org-roam-bibtex
-  :recipe (:host github :repo "org-roam/org-roam-bibtex"))
+;; modern style for org buffers
+(package! org-modern :recipe (:host github :repo "minad/org-modern"))
 
 ;; When using org-roam via the `+roam` flag
 (unpin! org-roam)
