@@ -14,12 +14,12 @@ set $down a
 set $up l
 set $right e
 # Your preferred terminal emulator
-set $term kitty
+set $term foot
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu wofi --show drun -i --allow-images -W 500 -H 400
-for_window [class="URxvt" instance="launcher"] floating enable, border pixel 2, sticky enable
-set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="urxvt -e" sway-launcher-desktop
+# for_window [class="URxvt" instance="launcher"] floating enable, border pixel 2, sticky enable
+# set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="urxvt -e" sway-launcher-desktop
 # set $dmenu j4-dmenu-desktop --dmenu="bemenu -ib" --no-generic --term=kitty
 
 ### Output configuration
@@ -80,7 +80,7 @@ exec swayidle -w \
 
     # change borders
     bindsym $mod+udiaeresis border none
-    bindsym $mod+odiaeresis border pixel 2
+    bindsym $mod+odiaeresis border pixel 3
     bindsym $mod+adiaeresis border normal
 
 ### Key bindings
@@ -103,7 +103,7 @@ exec swayidle -w \
 
     # start your launcher
     bindsym $mod+m exec $menu
-    bindsym $mod+d exec $dmenu
+    # bindsym $mod+d exec $dmenu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -326,7 +326,7 @@ exec_always {
 }
 
 # switch between different tiling modes
-exec swaymgr
+exec --no-startup-id swaymgr
 set $mode_swaymgr Tiling: (s) spiral, (l) left, (m) manual
 mode "$mode_swaymgr" {
     bindsym  s exec swaymgr -s 'set spiral'; mode "default"
