@@ -84,7 +84,7 @@ set listchars=tab:▸\ ,eol:↩,trail:⋅,extends:❯,precedes:❮
 
 " airline configuration
 set laststatus=2 " show airline all the time
-let g:airline_theme='edge'
+let g:airline_theme='deus'
 let g:airline#extensions#tmuxline#enabled = 1 "use airline colors for tmuxline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
