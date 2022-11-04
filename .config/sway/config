@@ -70,17 +70,20 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
     # Configure border style <normal|1pixel|pixel xx|none|pixel>
-    default_border pixel 2
-    default_floating_border pixel 2
+    default_border pixel 1
+    default_floating_border pixel 1
     floating_minimum_size 75 x 50
     floating_maximum_size 1870 x 1000
+
+    titlebar_border_thickness 1
+    # titlebar_padding <h> [v]
 
     # Hide borders
     hide_edge_borders none
 
     # change borders
     bindsym $mod+udiaeresis border none
-    bindsym $mod+odiaeresis border pixel 3
+    bindsym $mod+odiaeresis border pixel 1
     bindsym $mod+adiaeresis border normal
 
 ### Key bindings
