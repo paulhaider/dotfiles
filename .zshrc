@@ -1,5 +1,31 @@
 # zsh settings
 
+# zsh edge theme
+# source ~/.vim/plugged/edge/zsh/.zsh-theme-edge-dark
+
+# Source antigen
+source ~/.config/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# antigen bundle robbyrussell/oh-my-zsh lib/
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle mafredri/zsh-async
+antigen bundle git
+antigen bundle archlinux
+# antigen bundle tmux
+antigen bundle common-aliases
+antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zsh-users/zsh-autosuggestions
+
+# Load the theme.
+antigen theme halfo/lambda-mod-zsh-theme
+
+# Tell antigen that you're done.
+antigen apply
+
 # vim as default editor in the terminal
 if [[ -d $HOME/.config/nvim ]]
 then
@@ -20,8 +46,9 @@ bindkey -e
 path+=$HOME/.emacs.d/bin
 export PATH
 
-#aliases
+# aliases
 alias emacs='emacs -nw'
+alias ls='exa'
 alias tmux='tmux -2'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -43,27 +70,3 @@ KEYTIMEOUT=1
 # set 256 colors if not in tmux
 # [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
-# zsh edge theme
-source ~/.vim/plugged/edge/zsh/.zsh-theme-edge-dark
-
-# Source antigen
-source ~/.config/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# antigen bundle robbyrussell/oh-my-zsh lib/
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle archlinux
-# antigen bundle tmux
-antigen bundle common-aliases
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-
-# Load the theme.
-antigen theme halfo/lambda-mod-zsh-theme
-
-# Tell antigen that you're done.
-antigen apply
