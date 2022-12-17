@@ -232,7 +232,7 @@ exec swayidle -w \
     bindsym $mod+Ctrl+Right workspace next
     bindsym $mod+Ctrl+Left workspace prev
     bindsym $mod+o workspace next
-    bindsym $mod+p workspace prev
+    bindsym $mod+u workspace prev
     bindsym $mod+Tab workspace next
     bindsym $mod+Shift+Tab workspace prev
 
@@ -270,7 +270,7 @@ exec swayidle -w \
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+g layout stacking
+    bindsym $mod+d layout stacking
     bindsym $mod+t layout tabbed
     bindsym $mod+r layout toggle split
 
@@ -284,7 +284,8 @@ exec swayidle -w \
     bindsym $mod+space focus mode_toggle
 
     # move focus to the parent container
-    bindsym $mod+u focus parent
+    bindsym $mod+p focus parent
+
 #
 # Scratchpad:
 #
@@ -345,7 +346,7 @@ mode "$mode_swaymgr" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+w mode "$mode_swaymgr"
+bindsym $mod+x mode "$mode_swaymgr"
 
 # start tray applets
 exec nm-applet --indicator
