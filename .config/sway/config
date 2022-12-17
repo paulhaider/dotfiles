@@ -326,6 +326,10 @@ bindsym $mod+z mode "resize"
 #
 # Autostart applications
 #
+# set environment variables for screensharing
+# according to xdg-desktop-portal-wlr README
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # set gtk-theme, icon-theme and cursor-theme for gtk programs
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
