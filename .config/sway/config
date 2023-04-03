@@ -17,10 +17,10 @@ set $right e
 set $term foot
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu wofi --show drun -i --allow-images -W 500 -H 400
-# for_window [class="URxvt" instance="launcher"] floating enable, border pixel 2, sticky enable
-# set $dmenu exec urxvt -geometry 55x18 -name launcher -e env TERMINAL_COMMAND="urxvt -e" sway-launcher-desktop
-# set $dmenu j4-dmenu-desktop --dmenu="bemenu -ib" --no-generic --term=kitty
+set $wofi wofi --show drun -i --allow-images -W 500 -H 400
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 2
+set $menu exec $term -a launcher -e sway-launcher-desktop
+set $dmenu j4-dmenu-desktop --dmenu="bemenu -i -H 32" --no-generic --term=$term
 
 ### Output configuration
 # atm kanshi is used for output configuration
@@ -105,8 +105,10 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+m exec $menu
-    # bindsym $mod+d exec $dmenu
+    bindsym $mod+m exec $wofi
+    bindsym $mod+Shift+m exec $menu
+    bindsym $mod+d exec $dmenu
+    bindsym $mod+Shift+d exec passmenu -bi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -237,7 +239,7 @@ exec swayidle -w \
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+d layout stacking
+    # bindsym $mod+d layout stacking
     bindsym $mod+t layout tabbed
     bindsym $mod+r layout toggle split
 
@@ -364,21 +366,21 @@ bar {
 }
 
 # start kanshi for dynamic output configuration
-# exec kanshi
+exec_always kanshi
 
 #
 # Gaps
 #
 # Set inner/outer gaps
-gaps inner 8
+gaps inner 2
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps off
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders no_gaps
+smart_borders on
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
