@@ -108,7 +108,7 @@ exec swayidle -w \
     bindsym $mod+m exec $wofi
     bindsym $mod+Shift+m exec $menu
     bindsym $mod+d exec $dmenu
-    bindsym $mod+Shift+d exec passmenu -bi
+    bindsym $mod+Shift+d exec passmenu -i -H 32
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -332,7 +332,7 @@ exec blueman-applet
 exec redshift-gtk
 
 # load Xresources
-exec xrdb ~/.Xresources
+# exec xrdb ~/.Xresources
 
 # show message when battery is discharging
 exec swaynag-battery
@@ -365,8 +365,14 @@ bar {
     swaybar_command waybar
 }
 
+# Clamshell Mode
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+exec_always /home/paul/.config/bin/lid-state.sh
+
 # start kanshi for dynamic output configuration
-exec_always kanshi
+# exec_always kanshi
 
 #
 # Gaps
