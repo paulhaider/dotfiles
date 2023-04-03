@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# turn off xwayland
+xwayland disable
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -312,19 +315,8 @@ exec_always {
     gsettings set $gnome-schema cursor-theme 'xcursor-breeze-snow'
 }
 
-# switch between different tiling modes
-exec --no-startup-id swaymgr
-set $mode_swaymgr Tiling: (s) spiral, (l) left, (m) manual
-mode "$mode_swaymgr" {
-    bindsym  s exec swaymgr -s 'set spiral'; mode "default"
-    bindsym  l exec swaymgr -s 'set left'; mode "default"
-    bindsym  m exec swaymgr -s 'set manual'; mode "default"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+x mode "$mode_swaymgr"
+# autotiling
+exec_always autotiling-rs
 
 # start tray applets
 exec nm-applet --indicator
