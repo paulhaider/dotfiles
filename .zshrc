@@ -42,8 +42,9 @@ fi
 bindkey -e
 
 # PATH configuration
-# add Doom folder to path
-path+=$HOME/.emacs.d/bin
+# add binary folders to path variable
+path+=$HOME/.config/emacs/bin
+path+=$HOME/.cargo/bin
 export PATH
 
 # aliases

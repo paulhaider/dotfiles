@@ -23,16 +23,15 @@ set $term foot
 set $wofi wofi --show drun -i --allow-images -W 500 -H 400
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 2
 set $menu exec $term -a launcher -e sway-launcher-desktop
-set $dmenu j4-dmenu-desktop --dmenu="bemenu -i -H 32" --no-generic --term=$term
+set $dmenu j4-dmenu-desktop --dmenu='bemenu' --no-generic --term=$term
 
 ### Output configuration
-# atm kanshi is used for output configuration
 # output DP-1 mode 2560x1440@59.951000Hz pos 0,0
 # output eDP-1 res 1920x1080 pos 2560,0
 # output HDMI-A-2 mode 1920x1080@50Hz pos 1920,0
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-milan-original.jpg fill
-output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-venice.jpg fill
+set $bg /home/paul/Pictures/Wallpapers/cristina-gottardi-venice.jpg
+output * bg $bg fill
 #
 # Example configuration:
 #
@@ -42,10 +41,11 @@ output * bg /home/paul/Pictures/Wallpapers/cristina-gottardi-venice.jpg fill
 
 ### Idle configuration
 #
+set $lock 'swaylock-corrupter -f'
 exec swayidle -w \
-         timeout 300 'swaylock -f' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f'
+    timeout 300 $lock \
+    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -i $bg --effect-blur=7x5'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -110,8 +110,8 @@ exec swayidle -w \
     # start your launcher
     bindsym $mod+m exec $wofi
     bindsym $mod+Shift+m exec $menu
-    bindsym $mod+d exec $dmenu
-    bindsym $mod+Shift+d exec passmenu -i -H 32
+    bindsym $mod+b exec $dmenu
+    bindsym $mod+Shift+b exec passmenu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -124,10 +124,10 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # display gamma settings using wl-gammactl
-    bindsym $mod+c exec wl-gammactl
+    bindsym $mod+g exec wl-gammactl
 
     # lock screen
-    bindsym $mod+Shift+k exec swaylock
+    bindsym $mod+Shift+k exec swaylock-corrupter
 
     # exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -159,8 +159,8 @@ exec swayidle -w \
 
     # workspace back and forth (with/without active container)
     workspace_auto_back_and_forth yes
-    bindsym $mod+b workspace back_and_forth
-    bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+    bindsym $mod+p workspace back_and_forth
+    bindsym $mod+Shift+p move container to workspace back_and_forth; workspace back_and_forth
 #
 # Workspaces:
 #
@@ -236,13 +236,13 @@ exec swayidle -w \
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+h or $mod+v, for horizontal and vertical splits
+    # $mod+c or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+h splith
+    bindsym $mod+c splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    # bindsym $mod+d layout stacking
+    bindsym $mod+h layout stacking
     bindsym $mod+t layout tabbed
     bindsym $mod+r layout toggle split
 
@@ -256,7 +256,7 @@ exec swayidle -w \
     bindsym $mod+space focus mode_toggle
 
     # move focus to the parent container
-    bindsym $mod+p focus parent
+    bindsym $mod+d focus parent
 
     # toggle floating for certain applications
     for_window [class="MEGAsync" instance="megasync"] floating enable
