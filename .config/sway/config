@@ -20,9 +20,7 @@ set $right e
 set $term foot
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $wofi wofi --show drun -i --allow-images -W 500 -H 400
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 2
-set $menu exec $term -a launcher -e sway-launcher-desktop
+set $menu wofi --show drun -i --allow-images -W 500 -H 400
 set $dmenu j4-dmenu-desktop --dmenu='bemenu' --no-generic --term=$term
 
 ### Output configuration
@@ -108,10 +106,10 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+m exec $wofi
-    bindsym $mod+Shift+m exec $menu
-    bindsym $mod+b exec $dmenu
-    bindsym $mod+Shift+b exec passmenu
+    bindsym $mod+m exec $menu
+    bindsym $mod+Shift+m exec wofipassmenu
+    bindsym $mod+d exec $dmenu
+    bindsym $mod+Shift+d exec passmenu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -256,7 +254,7 @@ exec swayidle -w \
     bindsym $mod+space focus mode_toggle
 
     # move focus to the parent container
-    bindsym $mod+d focus parent
+    bindsym $mod+b focus parent
 
     # toggle floating for certain applications
     for_window [class="MEGAsync" instance="megasync"] floating enable
@@ -378,7 +376,7 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+smart_borders no_gaps
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
