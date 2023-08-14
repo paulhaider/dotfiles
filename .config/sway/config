@@ -20,7 +20,9 @@ include /etc/sway/inputs/*
 include /etc/sway/outputs/*
 
 # enable modes
-include /etc/sway/modes/*
+# include /etc/sway/modes/*
+# use custom modes adapted to neo layout
+include $HOME/.config/sway/modes/*
 
 # only enable this if every app you use is compatible with wayland
 # xwayland disable
