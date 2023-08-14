@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# /usr/bin/pinentry-bemenu -i -H 30
+# /usr/bin/pinentry-bemenu -i -H 30 --fb "#141a1b" --ff "#43a5d5" --fb "#141a1b" 
+# /usr/bin/pinentry-bemenu -i -H 30 --fb "#1e1e2e" --ff "#94e2d5" --nb "#1e1e2e" --nf "#f5e0dc" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#cba6f7" --hf "#89b4fa" --nf "#f5e0dc"
+/usr/bin/pinentry-bemenu -i -H 30 --fn 'JetBrainsMono Nerd Font 14px' --tf '#1b2224' --hf '#2bb29a' --tb '#2bb29a' --hb '#1b2224' --nb '#1b2224' --fb '#1b2224' --ab '#1b2224'

@@ -1,0 +1,4 @@
+alias termbin="nc termbin.com 9999"
+alias vi="nvim"
+alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
