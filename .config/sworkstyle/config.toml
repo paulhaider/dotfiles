@@ -17,5 +17,6 @@
 # Anything added in here will override the defaults in the package.
 
 [matching]
-'emacs' = 'ℰ'
+'emacs' = ''
+# 'emacs' = 'ℰ'
 # 'emacs' = '𝓔'
