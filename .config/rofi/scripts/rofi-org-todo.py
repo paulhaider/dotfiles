@@ -6,8 +6,7 @@ from rofi import Rofi
 
 # path to where you want your TODOs to be inserted to
 inbox_file = "/home/paul/Documents/braindump/inbox.org"
-# r = Rofi(lines=10, width=35, rofi_args=['/home/paul/.config/rofi/Manjaro.rasi'])
-r = Rofi(rofi_args=['-font', 'Roboto 11', '-fixed-num-lines', 'false'])
+r = Rofi()
 
 def todo_to_inbox():
     todo = r.text_entry("TODO",
