@@ -1,38 +1,38 @@
 {
-    "include": [
-            "/usr/share/sway/templates/waybar/config.jsonc"
-],
-    "position": "top",
-    "layer": "bottom",
+  "include": [
+    "/usr/share/sway/templates/waybar/config.jsonc"
+  ],
+  "position": "top",
+  "layer": "bottom",
 
-    "clock": {
-        "interval": 60,
-        "format": " {:%e %b %Y  %H:%M}",
-        "tooltip": true,
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "on-click-right": "mode",
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
+  "clock": {
+    "interval": 60,
+    "format": " {:%e %b %Y  %H:%M}",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
     },
-    "modules-right": [
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "modules-right": [
         // informational
         // "sway/language",
         "custom/github",
@@ -61,36 +61,36 @@
 
         "tray",
         "clock"
-    ],
+  ],
 
-    "custom/weather": {
-        "icon-size": 42,
-        "format": "{icon} {}",
-        "tooltip": true,
-        "interval": 3600,
+  "custom/weather": {
+    "icon-size": 42,
+    "format": "{icon} {}",
+    "tooltip": true,
+    "interval": 3600,
         // accepts -c/--city <city> -t/--temperature <C/F> -d/--distance <km/miles>
         "exec": "/usr/share/sway/scripts/weather.py -c Bern",
         "return-type": "json",
         "format-icons": {
-            "Unknown": "",
-            "Cloudy": "󰖐",
-            "Fog": "",
-            "HeavyRain": "",
-            "HeavyShowers": "",
-            "HeavySnow": "",
-            "HeavySnowShowers": "󰜗",
-            "LightRain": "",
-            "LightShowers": "",
-            "LightSleet": "",
-            "LightSleetShowers": "",
-            "LightSnow": "",
-            "LightSnowShowers": "󰙿",
-            "PartlyCloudy": "",
-            "Sunny": "",
-            "ThunderyHeavyRain": "󰙾",
-            "ThunderyShowers": "",
-            "ThunderySnowShowers": "",
-            "VeryCloudy": ""
+          "Unknown": "",
+          "Cloudy": "󰖐",
+          "Fog": "",
+          "HeavyRain": "",
+          "HeavyShowers": "",
+          "HeavySnow": "",
+          "HeavySnowShowers": "󰜗",
+          "LightRain": "",
+          "LightShowers": "",
+          "LightSleet": "",
+          "LightSleetShowers": "",
+          "LightSnow": "",
+          "LightSnowShowers": "󰙿",
+          "PartlyCloudy": "",
+          "Sunny": "",
+          "ThunderyHeavyRain": "󰙾",
+          "ThunderyShowers": "",
+          "ThunderySnowShowers": "",
+          "VeryCloudy": ""
         }
-    }
+  }
 }
